@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<user_data>
+	<user status="admin">
+		<uname>admin</uname>
+		<pass>1234</pass>
+	</user>
+	<user status="manager">
+		<uname>manager</uname>
+		<pass>1111</pass>
+	</user>
+	<user status="stuff">
+		<uname>stuff</uname>
+		<pass>2222</pass>
+	</user>
+<user status="client"><uname>client</uname><pass>3333</pass></user><user status="client"><uname>a</uname><pass>123</pass></user><user status="stuff"><uname>borshon</uname><pass>cccc</pass></user><user status="client"><uname>readoy</uname><pass>9999</pass></user></user_data>

@@ -3,6 +3,7 @@
 	<head></head>
 	<body>
 		<?php
+			require "models/db_connect.php";
 			$uname = "";
 			$userStatus = "";
 			if(isset($_POST['account']))
@@ -11,29 +12,24 @@
 				if(isset($_SESSION['loggedinuser']))
 				{
 					$uname = $_SESSION['loggedinuser'];
-					$login = simplexml_load_file("data\login.xml");
-					$user_name = "";
-					$uStatus = "";
-					for($i=0;$i<count($login->user);$i++)
+					$query = "SELECT status FROM login WHERE user_name='$uname'";
+					$result = get($query);
+					if(mysqli_num_rows($result) > 0)
 					{
-						$user_name = (String)$login->user[$i]->uname;
-						$uStatus = (String)$login->user[$i]["status"];
-						if($uname == $user_name)
+						$rows = mysqli_fetch_assoc($result);
+						if($rows["status"] == "admin")
 						{
-							if($uStatus == "admin")
-							{
-								header("Location:views/admin_dashboard.php");
-							}
-							elseif($uStatus == "manager")
-							{
-								header("Location:views/manager_dashboard.php");
-							}
-							elseif($uStatus == "stuff")
-							{
-								header("Location:views/employee_dashboard.php");
-							}
+							header("Location:views/admin_dashboard.php");
 						}
-					}
+						elseif($rows["status"] == "manager")
+						{
+							header("Location:views/manager_dashboard.php");
+						}
+						elseif($rows["status"] == "stuff")
+						{
+							header("Location:views/employee_dashboard.php");
+						}
+					}	
 				}
 				elseif(!isset($_SESSION['loggedinuser']))
 				{

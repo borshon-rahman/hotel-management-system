@@ -3,10 +3,12 @@
 	<head></head>
 	<body style="background-image: url(../storage/images/login.jpg);">
 		<?php
+		require '../models/db_connect.php';
 		$uname = "";
 		$err_uname = "";
 		$pass = "";
 		$err_pass = "";
+		$invalid = "";
 		if(isset($_POST['login']))
 		{
 			$uname = htmlspecialchars($_POST['uname']);
@@ -26,62 +28,48 @@
 			}
 			else
 			{
-				$login = simplexml_load_file("../data/login.xml");
-				$user_name = "";
-				$password = "";
-				$userStatus = "";
-				for($i=0;$i<count($login->user);$i++)
+				$query = "SELECT * FROM login WHERE user_name='$uname' AND password='$pass'";
+				$result = get($query);
+				if(mysqli_num_rows($result) > 0)
 				{
-					$user_name = (String)$login->user[$i]->uname;
-					$password = (String)$login->user[$i]->pass;
-					$userStatus = (String)$login->user[$i]["status"];
-					if($user_name == $uname && $password == $pass)
+					$rows = mysqli_fetch_assoc($result);
+
+					if($rows["status"] == "admin")
 					{
-						if($userStatus == "admin")
-						{
-							session_start();
-							$_SESSION["loggedinuser"]= $uname;
+						session_start();
+						$_SESSION["loggedinuser"]= $uname;
 							
-							header("Location:admin_dashboard.php");
-						}
-						elseif($userStatus == "manager")
-						{
-							session_start();
-							$_SESSION["loggedinuser"]= $uname;
-							
-							header("Location:manager_dashboard.php");
-						}
-						elseif($userStatus == "stuff")
-						{
-							session_start();
-							$_SESSION["loggedinuser"]= $uname;
-							
-							header("Location:employee_dashboard.php");
-						}
-						elseif($userStatus == "client")
-						{
-							session_start();
-							$_SESSION["loggedinuser"]= $uname;
-							
-							header("Location:room_reserve.php");
-						}
+						header("Location:admin_dashboard.php");
 					}
-					else if($user_name !== $uname && $password == $pass)
+					elseif($rows["status"] == "manager")
 					{
-						$err_uname = "Enter Userid Correctly";
+						session_start();
+						$_SESSION["loggedinuser"]= $uname;
+							
+						header("Location:manager_dashboard.php");
 					}
-					else if($user_name == $uname && $password !== $pass)
+					elseif($rows["status"] == "stuff")
 					{
-						$err_pass = "Wrong password entered";
+						session_start();
+						$_SESSION["loggedinuser"]= $uname;
+							
+						header("Location:employee_dashboard.php");
 					}
-					else if($user_name !== $uname && $password !== $pass)
+					elseif($rows["status"] == "client")
 					{
-						$err_uname = "Enter Userid Correctly";
-						$err_pass = "Wrong password entered";
+						session_start();
+						$_SESSION["loggedinuser"]= $uname;
+							
+						header("Location:room_reserve.php");
 					}
 				}
-			}	
-		}
+				else
+				{
+					$invalid = "Invalid User";
+				}
+				
+			}
+		}	
 		?>
 
 		<div style="text-align: center; background-color: rgb(11, 13, 71);">
@@ -104,6 +92,7 @@
 						</td>
 					</tr>
 				</table><br>
+				<font size="4" style="color: red"><?php echo "$invalid"; ?></font><br>
 				<input type="submit" name="login" value="Log In">
 			</form>
 			<i><b><font size="3">Don't have any account? Click here </font></b></i><a href="client_reg.php"><font style="color: blue;">register.</font></a>

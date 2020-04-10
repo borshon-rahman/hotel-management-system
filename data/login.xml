@@ -12,4 +12,4 @@
 		<uname>stuff</uname>
 		<pass>2222</pass>
 	</user>
-<user status="client"><uname>client</uname><pass>3333</pass></user><user status="client"><uname>a</uname><pass>123</pass></user><user status="stuff"><uname>borshon</uname><pass>cccc</pass></user><user status="client"><uname>readoy</uname><pass>9999</pass></user></user_data>
+<user status="client"><uname>client</uname><pass>3333</pass></user><user status="client"><uname>a</uname><pass>123</pass></user><user status="stuff"><uname>borshon</uname><pass>cccc</pass></user><user status="client"><uname>readoy</uname><pass>9999</pass></user><user status="client"><uname>client1</uname><pass>client</pass></user></user_data>

@@ -2,6 +2,7 @@
 	<title>User Registration</title>
 	<head></head>
 	<?php
+		require "../models/db_connect.php";
 		$uname = "";
 		$err_uname = "";
 		$pass = "";
@@ -28,18 +29,8 @@
 				if($_POST['pass'] == $_POST['cpass'])
 				{
 					$pass = $_POST['pass'];
-					$xml = new DOMDocument();
-					$xml->load("../data/login.xml");
-					$rootTag = $xml->getElementsByTagName("user_data")->item(0);
-					$userTag = $xml->createElement("user");
-					$userTag->setAttribute("status", "$status");
-						$unameTag = $xml->createElement("uname", $uname);
-						$passTag = $xml->createElement("pass", $pass);
-							$userTag->appendChild($unameTag);
-							$userTag->appendChild($passTag);
-					$rootTag->appendChild($userTag);
-					$xml->save("../data/login.xml");
-
+					$query = "INSERT INTO login (user_name, password, status) VALUES ('$uname', '$pass', '$status')";
+					$result= execute($query);
 					$msg = "Registration Succesfull!";
 				}
 				else

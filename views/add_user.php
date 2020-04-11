@@ -16,6 +16,7 @@
 	<head></head>
 	<body style="background-color: rgb(34,139,34); background-image: url(../storage/images/add_user.jpg); background-blend-mode: lighten;">
 		<?php
+		require "../models/db_connect.php";
 		$fname = "";
 		$err_fname = "";
 		$lname = "";
@@ -33,6 +34,7 @@
 		$country = "";
 		$err_country = "";
 		$phone = "";
+		$err_phone = "";
 		$email = "";
 		$err_email = "";
 		$uname = "";
@@ -111,7 +113,15 @@
 			{
 				$country = htmlspecialchars($_POST['country']);
 			}
-			$phone = htmlspecialchars($_POST['phone']);
+			if(empty($_POST['phone']))
+			{
+				$err_phone = "Phone Number is required";
+
+			}
+			else
+			{
+				$phone = htmlspecialchars($_POST['phone']);
+			}
 			if(empty($_POST['email']))
 			{
 				$err_email = "Email is required";
@@ -146,45 +156,10 @@
 				if($_POST['cpass'] == $_POST['pass'])
 				{
 					$pass = $_POST['pass'];
-					$xml = new DOMDocument();
-					$xml->load("../data/user.xml");
-					$rootTag = $xml->getElementsByTagName("user_info")->item(0);
-					$userTag = $xml->createElement("user");
-					$userTag->setAttribute("status", "$status");
-						$fnameTag = $xml->createElement("fname", $fname);
-						$lnameTag = $xml->createElement("lname", $lname);
-						$genderTag = $xml->createElement("gender", $gender);
-						$address1Tag = $xml->createElement("address1", $adrs1);
-						$address2Tag = $xml->createElement("address2", $adrs2);
-						$cityTag = $xml->createElement("city", $city);
-						$zipTag = $xml->createElement("zip", $zip);
-						$countryTag = $xml->createElement("country", $country);
-						$phoneTag = $xml->createElement("phone", $phone);
-						$emailTag = $xml->createElement("email", $email);
-							$userTag->appendChild($fnameTag);
-							$userTag->appendChild($lnameTag);
-							$userTag->appendChild($genderTag);
-							$userTag->appendChild($address1Tag);
-							$userTag->appendChild($address2Tag);
-							$userTag->appendChild($cityTag);
-							$userTag->appendChild($zipTag);
-							$userTag->appendChild($countryTag);
-							$userTag->appendChild($phoneTag);
-							$userTag->appendChild($emailTag);
-					$rootTag->appendChild($userTag);
-					$xml->save("../data/user.xml");
-
-					$xml = new DOMDocument();
-					$xml->load("../data/login.xml");
-					$rootTag = $xml->getElementsByTagName("user_data")->item(0);
-					$userTag = $xml->createElement("user");
-					$userTag->setAttribute("status", "$status");
-						$unameTag = $xml->createElement("uname", $uname);
-						$passTag = $xml->createElement("pass", $pass);
-							$userTag->appendChild($unameTag);
-							$userTag->appendChild($passTag);
-					$rootTag->appendChild($userTag);
-					$xml->save("../data/login.xml");
+					$query1 = "INSERT INTO users(fname, lname, gender, permanent_adrs, present_adrs, city, zip_code, coountry, phone, email) VALUES ('$fname','$lname','$gender','$adrs1','$adrs2','$city','$zip','$country','$phone','$email')";
+					execute($query1);
+					$query2 = "INSERT INTO login(user_name, password, status) VALUES ('$uname','$pass','$status')";
+					execute($query2);
 
 					$fname = "";
 					$err_fname = "";
@@ -203,6 +178,7 @@
 					$country = "";
 					$err_country = "";
 					$phone = "";
+					$err_phone = "";
 					$email = "";
 					$err_email = "";
 					$uname = "";
@@ -237,6 +213,7 @@
 		</form>
 	<form method="post" action="">
 		<center>
+			<font size="4" style="color: blue;"><?php echo "$chk"; ?></font><br>
 			<font size="4" style="color: blue;"><?php echo "$msg"; ?></font>
 			<h3>Personal Information</h3>
 			<table>
@@ -284,8 +261,9 @@
 						<font size="2" style="color: red"><?php echo "$err_country"; ?></font></td>
 				</tr>
 				<tr>
-					<td><b>Phone </b></td>
-					<td><input type="text" name="phone" value="<?php echo "$phone"; ?>"></td>
+					<td><b><font size="2" style="color: red">*</font>Phone </b></td>
+					<td><input type="text" name="phone" value="<?php echo "$phone"; ?>"><br>
+						<font size="2" style="color: red"><?php echo "$err_phone"; ?></font></td>
 				</tr>
 				<tr>
 					<td><b><font size="2" style="color: red">*</font>Email</b></td>
@@ -304,7 +282,7 @@
 				</tr>
 				<tr>
 					<td><b>Status: </b></td>
-					<td><input type="text" name="status"><br>
+					<td><input type="text" name="status" value="<?php echo "$status"; ?>"><br>
 						<font size="2" style="color: red"><?php echo "$err_status"; ?></font></td>
 				</tr>
 				<tr>

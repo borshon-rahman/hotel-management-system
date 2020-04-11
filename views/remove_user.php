@@ -11,35 +11,28 @@
 	}
 ?>
 <html>
-	<title></title>
 	<head></head>
 	<body style="background-image: url(../storage/images/image.png); background-color: yellow; background-blend-mode: lighten;">
 		<?php
-			/*$uname = "";
+			require "../models/db_connect.php";
+			$uname = "";
 			$err = "";
+			$msg = "";
 			if(isset($_POST['delete']))
 			{
 				if(empty($_POST['uname']))
 				{
-					$err = "Eter Username";
+					$err = "Enter Username";
 				}
 				else
 				{
 					$uname = htmlspecialchars($_POST['uname']);
-					$xml = new DOMDocument();
-					$xml->load("data\login.xml");
-					$rootTag = $xml->getElementsByTagName("user_data")->item(0);
-					$user_name = "";
-					for($i=0;$i<count($login->user);$i++)
-					{
-						$user_name = (String)$login->user[$i]->uname;
-						if($uname == $user_name)
-						{
-							$user_name->parentNode
-						}
-						$xml->save("data\login.xml");
-					}
-			}*/
+
+					$query = "DELETE FROM login WHERE user_name='$uname'";
+					execute($query);
+					$msg = "User Removed";
+				}
+			}
 		?>
 		<form method="post" action="" style="background-color: rgb(11, 13, 71);">
 			<center>
@@ -56,10 +49,11 @@
 		</form>
 		<form method="post" action="">
 			<center>
+				<span><font size="4" style="color: red"><b><?php echo "$msg"; ?></b></font></span>
 				<table>
 					<tr>
 						<td><b>Username </b></td>
-						<td><input type="text" name="uname"> &nbsp <font size="2" style="color: red"><b></b></font></td>
+						<td><input type="text" name="uname"> &nbsp <font size="2" style="color: red"><b><?php echo "$err"; ?></b></font></td>
 					</tr>
 				</table>
 				<input type="submit" name="delete" value="Discard">

@@ -11,7 +11,7 @@
 	}
 ?>
 <html>
-	<title>Admin</title>
+	<title>Manager</title>
 	<head></head>
 	<body style="background-color: rgb(236,190,20); background-image: url(../storage/images/admin.jpg); background-blend-mode: lighten;">
 		<form method="post" action="" style="background-color: rgb(11, 13, 71);">

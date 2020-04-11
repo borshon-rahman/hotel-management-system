@@ -34,7 +34,7 @@
 			</div>
 			<br>
 			<div>
-				<font size="15"><u>Manage Rooms </u>-></font> <a href="add_room.php"><font size="8" style="color: rgb(168,58,58);">Add Room</font></a> &nbsp &nbsp <a href=""><font size="8" style="color: rgb(168,58,58);">Remove Room</font></a> &nbsp &nbsp <a href="room_reserve.php"><font size="8" style="color: rgb(168,58,58);">Reserve Room</font></a>
+				<font size="15"><u>Manage Rooms </u>-></font> <a href="add_room.php"><font size="8" style="color: rgb(168,58,58);">Add Room</font></a> &nbsp &nbsp <a href="remove_room.php"><font size="8" style="color: rgb(168,58,58);">Remove Room</font></a> &nbsp &nbsp <a href="room_reserve.php"><font size="8" style="color: rgb(168,58,58);">Reserve Room</font></a>
 				<br>
 				<a href=""><font size="8" style="color: rgb(168,58,58);">Room Reservation Requests</font></a>
 			</div>

@@ -16,6 +16,7 @@
 	<head></head>
 	<body style="background-color: rgb(34,139,34); background-image: url(../storage/images/add_user.jpg); background-blend-mode: lighten;">
 		<?php
+		require "../models/db_connect.php";
 		$fname = "";
 		$err_fname = "";
 		$lname = "";
@@ -138,45 +139,10 @@
 				if($_POST['cpass'] == $_POST['pass'])
 				{
 					$pass = $_POST['pass'];
-					$xml = new DOMDocument();
-					$xml->load("../data/user.xml");
-					$rootTag = $xml->getElementsByTagName("user_info")->item(0);
-					$userTag = $xml->createElement("user");
-					$userTag->setAttribute("status", "$status");
-						$fnameTag = $xml->createElement("fname", $fname);
-						$lnameTag = $xml->createElement("lname", $lname);
-						$genderTag = $xml->createElement("gender", $gender);
-						$address1Tag = $xml->createElement("address1", $adrs1);
-						$address2Tag = $xml->createElement("address2", $adrs2);
-						$cityTag = $xml->createElement("city", $city);
-						$zipTag = $xml->createElement("zip", $zip);
-						$countryTag = $xml->createElement("country", $country);
-						$phoneTag = $xml->createElement("phone", $phone);
-						$emailTag = $xml->createElement("email", $email);
-							$userTag->appendChild($fnameTag);
-							$userTag->appendChild($lnameTag);
-							$userTag->appendChild($genderTag);
-							$userTag->appendChild($address1Tag);
-							$userTag->appendChild($address2Tag);
-							$userTag->appendChild($cityTag);
-							$userTag->appendChild($zipTag);
-							$userTag->appendChild($countryTag);
-							$userTag->appendChild($phoneTag);
-							$userTag->appendChild($emailTag);
-					$rootTag->appendChild($userTag);
-					$xml->save("../data/user.xml");
-
-					$xml = new DOMDocument();
-					$xml->load("../data/login.xml");
-					$rootTag = $xml->getElementsByTagName("user_data")->item(0);
-					$userTag = $xml->createElement("user");
-					$userTag->setAttribute("status", "$status");
-						$unameTag = $xml->createElement("uname", $uname);
-						$passTag = $xml->createElement("pass", $pass);
-							$userTag->appendChild($unameTag);
-							$userTag->appendChild($passTag);
-					$rootTag->appendChild($userTag);
-					$xml->save("../data/login.xml");
+					$query1 = "INSERT INTO users(fname, lname, gender, permanent_adrs, present_adrs, city, zip_code, coountry, phone, email) VALUES ('$fname','$lname','$gender','$adrs1','$adrs2','$city','$zip','$country','$phone','$email')";
+					execute($query1);
+					$query2 = "INSERT INTO login(user_name, password, status) VALUES ('$uname','$pass','$status')";
+					execute($query2);
 
 					$fname = "";
 					$err_fname = "";

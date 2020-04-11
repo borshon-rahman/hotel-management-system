@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2020 at 09:50 AM
+-- Generation Time: Apr 11, 2020 at 08:07 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -43,8 +43,7 @@ INSERT INTO `login` (`SN`, `user_name`, `password`, `status`) VALUES
 (1, 'admin', '1234', 'admin'),
 (2, 'manager', '1111', 'manager'),
 (3, 'stuff', '2222', 'stuff'),
-(4, 'client', '3333', 'client'),
-(6, 'borshon', 'bbbb', 'client');
+(4, 'client', '3333', 'client');
 
 -- --------------------------------------------------------
 
@@ -71,14 +70,6 @@ CREATE TABLE `reserved_room` (
   `checkout_year` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `reserved_room`
---
-
-INSERT INTO `reserved_room` (`room_number`, `room_type`, `fname`, `lname`, `email`, `country`, `phone`, `bedding_type`, `room_count`, `meal_plan`, `checkin_date`, `checkin_month`, `checkin_year`, `checkout_date`, `checkout_month`, `checkout_year`) VALUES
-(1, 'Superior Room', 'adads', 'ddf', 'fdhdgh', 'India', '4543124', 'Quad', 2, 'Breakfast', 11, 'Apr', 2020, 13, 'Apr', 2020),
-(2, 'Single Room', 'kjhkj', 'jhjhgf', 'kjhkjh', 'China', '656565656', 'Double', 1, 'Full Board', 11, 'Apr', 2020, 13, 'Apr', 2020);
-
 -- --------------------------------------------------------
 
 --
@@ -100,23 +91,29 @@ INSERT INTO `room` (`room_number`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `users` (
   `SN` int(8) NOT NULL,
-  `status` varchar(10) NOT NULL,
-  `fname` varchar(20) NOT NULL,
-  `lname` varchar(20) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
   `gender` varchar(8) NOT NULL,
-  `address1` varchar(100) NOT NULL,
-  `address2` varchar(100) NOT NULL,
+  `permanent_adrs` varchar(100) NOT NULL,
+  `present_adrs` varchar(100) NOT NULL,
   `city` varchar(15) NOT NULL,
-  `zip` int(10) NOT NULL,
-  `country` varchar(20) NOT NULL,
+  `zip_code` varchar(10) NOT NULL,
+  `coountry` varchar(20) NOT NULL,
   `phone` varchar(15) NOT NULL,
-  `email` varchar(30) NOT NULL
+  `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`SN`, `fname`, `lname`, `gender`, `permanent_adrs`, `present_adrs`, `city`, `zip_code`, `coountry`, `phone`, `email`) VALUES
+(3, 'jhjhfjh', 'hgvjfj', 'Female', 'hgfhgfgh', 'jhbkjbkj', 'jbknbj', 'gvkvbkh', 'gkjgkj', 'hgvjhvkj', 'jnb,mb,m');
 
 --
 -- Indexes for dumped tables
@@ -142,9 +139,9 @@ ALTER TABLE `room`
   ADD PRIMARY KEY (`room_number`);
 
 --
--- Indexes for table `user`
+-- Indexes for table `users`
 --
-ALTER TABLE `user`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`SN`);
 
 --
@@ -155,7 +152,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

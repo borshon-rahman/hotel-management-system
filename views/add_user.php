@@ -213,7 +213,6 @@
 		</form>
 	<form method="post" action="">
 		<center>
-			<font size="4" style="color: blue;"><?php echo "$chk"; ?></font><br>
 			<font size="4" style="color: blue;"><?php echo "$msg"; ?></font>
 			<h3>Personal Information</h3>
 			<table>

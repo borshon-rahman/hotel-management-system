@@ -15,6 +15,7 @@
 	<head></head>
 	<body>
 		<?php
+			require "../models/db_connect.php";
 			$fname = "";
 			$err_fname = "";
 			$lname = "";
@@ -25,6 +26,7 @@
 			$err_phone = "";
 			$country = "";
 			$room_type = "";
+			$available_room = "";
 			$bedding_type = "";
 			$room_count = "";
 			$err_room_count = "";
@@ -78,19 +80,39 @@
 				else
 				{
 					$email = htmlspecialchars($_POST['email']);
-				}
-				$country = $_POST['country'];
-				$room_type = $_POST['room_type'];
-				$bedding_type = $_POST['bedding_type'];
-				$meal_plan = $_POST['meal_plan'];
-				$checkin_date = $_POST['checkin_date'];
-				$checkin_month = $_POST['checkin_month'];
-				$checkin_year = $_POST['checkin_year'];
-				$checkout_date = $_POST['checkout_date'];
-				$checkout_month = $_POST['checkout_month'];
-				$checkout_year = $_POST['checkout_year'];
+					
+					$country = $_POST['country'];
+					$room_type = $_POST['room_type'];
+					$available_room = $_POST['available_room'];
+					$bedding_type = $_POST['bedding_type'];
+					$meal_plan = $_POST['meal_plan'];
+					$checkin_date = $_POST['checkin_date'];
+					$checkin_month = $_POST['checkin_month'];
+					$checkin_year = $_POST['checkin_year'];
+					$checkout_date = $_POST['checkout_date'];
+					$checkout_month = $_POST['checkout_month'];
+					$checkout_year = $_POST['checkout_year'];
 
-				$msg = "Reservation Succesfull!";
+					$query = "INSERT INTO reserved_room VALUES ('$available_room', '$room_type', '$fname', '$lname', '$email', '$country', '$phone', '$bedding_type', '$room_count', '$meal_plan', '$checkin_date', '$checkin_month', '$checkin_year', '$checkout_date', '$checkout_month', '$checkout_year')";
+					execute($query);
+					$fname = "";
+					$lname = "";
+					$email = "";
+					$phone = "";
+					$country = "";
+					$room_type = "";
+					$available_room = "";
+					$bedding_type = "";
+					$room_count = "";
+					$meal_plan = "";
+					$checkin_date = "";
+					$checkin_month = "";
+					$checkin_year = "";
+					$checkout_date = "";
+					$checkout_month = "";
+					$checkout_year = "";
+					$msg = "Reservation Succesfull!";
+				}
 				
 			}
 
@@ -166,6 +188,16 @@
 								<option>Guest House</option>
 								<option>Single Room</option>
 							</select><br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font>Available Room</font><font style="color: red">*</font><br>
+							<font>Room Number </font><select name="available_room">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+							</select>
 						</td>
 					</tr>
 					<tr>

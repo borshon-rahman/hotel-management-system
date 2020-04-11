@@ -16,6 +16,7 @@
 	<head></head>
 	<body style="background-color: green;">
 	<?php
+		require "../models/db_connect.php";
 		$rn = "";
 		$err_rn = "";
 		$rtype = "";
@@ -30,17 +31,9 @@
 			else
 			{
 				$rn = $_POST['rn'];
-				$xml = new DOMDocument();
-					$xml->load("../data/room.xml");
-					$rootTag = $xml->getElementsByTagName("room_data")->item(0);
-					$roomTag = $xml->createElement("room");
-					$roomTag->setAttribute("type", "$rtype");
-						$room_numberTag = $xml->createElement("room_number", $rn);
-							$roomTag->appendChild($room_numberTag);
-					$rootTag->appendChild($roomTag);
-					$xml->save("../data/room.xml");
-
-					$msg = "Room Added!";
+				$query = "INSERT INTO room VALUES ('$rn','$rtype')";
+				execute($query);
+				$msg = "Room Added!";
 			}
 		}
 	?>

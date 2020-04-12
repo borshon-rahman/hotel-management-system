@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2020 at 08:07 PM
+-- Generation Time: Apr 12, 2020 at 06:37 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -78,15 +78,17 @@ CREATE TABLE `reserved_room` (
 
 CREATE TABLE `room` (
   `room_number` int(8) NOT NULL,
-  `type` varchar(15) NOT NULL
+  `type` varchar(15) NOT NULL,
+  `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `room`
 --
 
-INSERT INTO `room` (`room_number`, `type`) VALUES
-(1, 'Deluxe');
+INSERT INTO `room` (`room_number`, `type`, `status`) VALUES
+(1, 'Deluxe', 'available'),
+(2, 'Deluxe', 'reserved');
 
 -- --------------------------------------------------------
 
@@ -152,13 +154,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

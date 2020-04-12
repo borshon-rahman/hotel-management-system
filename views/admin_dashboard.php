@@ -94,6 +94,32 @@
 				xhttp.open("GET","room_reserve.php",true);
 				xhttp.send();
 			}
+			function available_room()
+			{
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function()
+				{
+					if(xhttp.readyState == 4 && xhttp.status == 200)
+					{
+						document.getElementById("content").innerHTML = xhttp.responseText;
+					}
+				}
+				xhttp.open("GET","available_room.php",true);
+				xhttp.send();
+			}
+			function reserved_room()
+			{
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function()
+				{
+					if(xhttp.readyState == 4 && xhttp.status == 200)
+					{
+						document.getElementById("content").innerHTML = xhttp.responseText;
+					}
+				}
+				xhttp.open("GET","reserved_room.php",true);
+				xhttp.send();
+			}
 		</script>
 	</head>
 	<body style="background-color: rgb(236,190,20); background-image: url(../storage/images/admin.jpg); background-blend-mode: lighten;">
@@ -118,7 +144,9 @@
 				<font size="6" style="color: white;">Manage Rooms</font><br>
 				<font size="4" style="color: rgb(168,58,58);" onclick="add_room()">Add Room</font><br>
 				<font size="4" style="color: rgb(168,58,58);" onclick="remove_room()">Remove Room</font><br>
-				<font size="4" style="color: rgb(168,58,58);" onclick="room_reserve()">Reserve Room</font><br>
+				<font size="4" style="color: rgb(168,58,58);" onclick="room_reserve()">Room Reserve</font><br>
+				<font size="4" style="color: rgb(168,58,58);" onclick="available_room()">Available Room</font><br>
+				<font size="4" style="color: rgb(168,58,58);" onclick="reserved_room()">Reserved Room</font><br>
 				<a href=""><font size="6" style="color: rgb(168,58,58);">Room Reservation Requests</font></a>
 			</div>
 			<div id="content">

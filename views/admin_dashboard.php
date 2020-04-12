@@ -111,7 +111,6 @@
 		</form>
 		<hr>
 		<br><br>
-		
 			<div id="navigation">
 				<font size="6" style="color: white;">Manage User</font><br>
 				<font size="4" style="color: rgb(168,58,58);" onclick="add_user()">Add user</font><br>
@@ -125,6 +124,5 @@
 			<div id="content">
 				
 			</div>
-		
 	</body>
 </html>

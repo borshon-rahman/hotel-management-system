@@ -86,9 +86,9 @@
 	    </div>
 		<hr>
 		<div id="navigation">
-			<font size="6" style="color: white" onclick="room_reserve()">Reserve Room</font><br><br>
-			<font size="6" style="color: white;" onclick="available_room()">Available Room</font><br><br>
-			<font size="6" style="color: white;" onclick="reserved_room()">Reserved Room</font><br><br>
+			<a href="javascript:;" onclick="room_reserve()"><font size="6" style="color: white">Reserve Room</font></a><br><br>
+			<a href="javascript:;" onclick="available_room()"><font size="6" style="color: white;">Available Room</font></a><br><br>
+			<a href="javascript:;" onclick="reserved_room()"><font size="6" style="color: white;">Reserved Room</font></a><br><br>
 			<a href=""><font size="6" style="color: white;">Reservation Request</font></a>
 		</div>
 		<div id="content">

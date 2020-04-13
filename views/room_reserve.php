@@ -135,7 +135,7 @@
 				<span><font size="4" style="color: yellow;"><?php echo "$msg"; ?></font></span>
 				<table>
 					<tr>
-						<td><span style="color: rgb(11,13,71);"><b>PERSONAL INFORMATION</b><br><hr></span></td>
+						<td><span style="color: rgb(11,13,71);"><font size="5"><b>PERSONAL INFORMATION</b></font><br><hr></span></td>
 					</tr>
 					<tr>
 						<td>

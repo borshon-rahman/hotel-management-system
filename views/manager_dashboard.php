@@ -23,7 +23,7 @@
 				padding: 5px;
 			}
 			#content {
-				width: 1200px;
+				width: 1230px;
 				float: left;
 				padding: 5px;
 			}
@@ -112,11 +112,11 @@
 		<hr>
 		<br><br>
 		<div id="navigation">
-			<font size="6">Manage User</font><br>
+			<font size="6" style="color: white;">Manage User</font><br>
 			<font size="4" style="color: rgb(168,58,58);" onclick="add_user()">Add user</font><br>
 			<font size="4" style="color: rgb(168,58,58);" onclick="remove_user()">Remove user</font>
 			<br>
-			<font size="6">Manage Rooms</font><br>
+			<font size="6" style="color: white;">Manage Rooms</font><br>
 			<font size="4" style="color: rgb(168,58,58);" onclick="room_reserve()">Room Reserve</font><br>
 			<font size="4" style="color: rgb(168,58,58);" onclick="available_room()">Available Room</font><br>
 			<font size="4" style="color: rgb(168,58,58);" onclick="reserved_room()">Reserved Room</font><br>

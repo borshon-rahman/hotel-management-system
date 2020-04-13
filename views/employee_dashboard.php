@@ -70,21 +70,22 @@
 			}
 		</script>
 	</head>
-	<body>
-		<form method="post" action="" style="text-align: right;">
-			<input type="submit" name="logout" value="Log out">
-		</form> 
-	    <div style="background-image: url(../storage/images/reception.jpg); height: 400;width: 100%; background-repeat: no-repeat; background-size: 100% 100%;">
-	    	<span style="text-align: left;">
-				<a href="../index.php"><font size="6" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="6" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>
-					<font size="2" style="font-family: verdana; color: rgb(160,150,16);">YOUR DREAM HOTEL</font>
-				</a>
-			</span>
-	    	
+	<body style="background-color: rgb(236,190,20); background-image: url(../storage/images/admin.jpg); background-blend-mode: lighten;">
+		<div style="background-color: rgb(11, 13, 71)">
+			<form method="post" action="" style="text-align: right;">
+				<input type="submit" name="logout" value="Log out">
+			</form> 
+	    	<div style="background-image: url(../storage/images/reception.jpg); height: 400;width: 100%; background-repeat: no-repeat; background-size: 100% 100%;">
+	    		<span style="text-align: left;">
+					<a href="../index.php"><font size="6" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="6" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>
+						<font size="2" style="font-family: verdana; color: rgb(160,150,16);">YOUR DREAM HOTEL</font>
+					</a>
+				</span>
+	    	</div>
+	    	<br>
 	    </div>
-	    <br>
 		<hr>
-		<div id="navigation" style="background-color: blue">
+		<div id="navigation">
 			<font size="6" style="color: white" onclick="room_reserve()">Reserve Room</font><br><br>
 			<font size="6" style="color: white;" onclick="available_room()">Available Room</font><br><br>
 			<font size="6" style="color: white;" onclick="reserved_room()">Reserved Room</font><br><br>

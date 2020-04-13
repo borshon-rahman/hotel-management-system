@@ -7,8 +7,8 @@
 		$rooms = available_room();
 		?>
 		<div>
-			<h3 style="text-align: center;">Available Room</h3>
-			<table align="center" border="1" style="border-collapse: collapse;">
+			<h2 style="text-align: center;">Available Room</h2>
+			<table align="center" border="1" style="border-collapse: collapse; text-align: center;">
 				<tr>
 					<th>Room Number</th>
 					<th>Room Type</th>

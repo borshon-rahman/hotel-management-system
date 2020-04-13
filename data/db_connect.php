@@ -3,6 +3,7 @@
 	$userName = "root";
 	$password = "";
 	$dbName = "php_db";
+	
 	function get($query)
 	{
 		global $serverName;
@@ -25,6 +26,4 @@
 		$result = mysqli_query($connection, $query);
 		mysqli_close($connection);
 	}
-
-
 ?>

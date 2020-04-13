@@ -73,7 +73,7 @@
 		?>
 
 		<div style="text-align: center; background-color: rgb(11, 13, 71);">
-				<a href="../index.php"><font size="8" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="8" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>
+				<a href="../index.php" style="text-decoration: none;"><font size="8" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="8" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>
 					<font size="4" style="font-family: verdana; color: rgb(160,150,16);">YOUR DREAM HOTEL</font>
 				</a>
 		</div>

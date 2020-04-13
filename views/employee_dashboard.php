@@ -77,7 +77,7 @@
 			</form> 
 	    	<div style="background-image: url(../storage/images/reception.jpg); height: 400;width: 100%; background-repeat: no-repeat; background-size: 100% 100%;">
 	    		<span style="text-align: left;">
-					<a href="../index.php"><font size="6" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="6" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>
+					<a href="../index.php" style="text-decoration: none;"><font size="6" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="6" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>
 						<font size="2" style="font-family: verdana; color: rgb(160,150,16);">YOUR DREAM HOTEL</font>
 					</a>
 				</span>
@@ -86,10 +86,10 @@
 	    </div>
 		<hr>
 		<div id="navigation">
-			<a href="javascript:;" onclick="room_reserve()"><font size="6" style="color: white">Reserve Room</font></a><br><br>
-			<a href="javascript:;" onclick="available_room()"><font size="6" style="color: white;">Available Room</font></a><br><br>
-			<a href="javascript:;" onclick="reserved_room()"><font size="6" style="color: white;">Reserved Room</font></a><br><br>
-			<a href=""><font size="6" style="color: white;">Reservation Request</font></a>
+			<a href="javascript:;" onclick="room_reserve()" style="text-decoration: none;"><font size="6" style="color: white">Reserve Room</font></a><br><br>
+			<a href="javascript:;" onclick="available_room()" style="text-decoration: none;"><font size="6" style="color: white;">Available Room</font></a><br><br>
+			<a href="javascript:;" onclick="reserved_room()" style="text-decoration: none;"><font size="6" style="color: white;">Reserved Room</font></a><br><br>
+			<a href="" style="text-decoration: none;"><font size="6" style="color: white;">Reservation Request</font></a>
 		</div>
 		<div id="content">
 			

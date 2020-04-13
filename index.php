@@ -43,20 +43,20 @@
 			<div style="background-color: rgb(11, 13, 71);">
 		<table>
 			<tr>
-				<td><a href="index.php"><font size="6" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="6" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>
+				<td><a href="index.php" style="text-decoration: none;"><font size="6" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="6" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>
 					<font size="2" style="font-family: verdana; color: rgb(160,150,16);">YOUR DREAM HOTEL</font></a>
 				</td>
-				<td valign="bottom"><a href="index.php"><font style="color: rgb(236,190,20);">Home</font></a></td>
+				<td valign="bottom"><a href="index.php" style="text-decoration: none;"><font style="color: rgb(236,190,20);">Home</font></a></td>
 				<td></td>
-				<td valign="bottom"><a href="#about" class="menu_link scroll"><font style="color: rgb(236,190,20);">About</font></a></td>
+				<td valign="bottom"><a href="#about" class="menu_link scroll" style="text-decoration: none;"><font style="color: rgb(236,190,20);">About</font></a></td>
 				<td></td>
-				<td valign="bottom"><a href="#gallery" class="menu_link scroll"><font style="color: rgb(236,190,20);">Gallery</font></a></td>
+				<td valign="bottom"><a href="#gallery" class="menu_link scroll" style="text-decoration: none;"><font style="color: rgb(236,190,20);">Gallery</font></a></td>
 				<td></td>
-				<td valign="bottom"><a href="#rooms" class="menu_link scroll"><font style="color: rgb(236,190,20);">Rooms</font></a></td>
+				<td valign="bottom"><a href="#rooms" class="menu_link scroll" style="text-decoration: none;"><font style="color: rgb(236,190,20);">Rooms</font></a></td>
 				<td></td>
-				<td valign="bottom"><a href="#contact" class="menu_link scroll"><font style="color: rgb(236,190,20);">Contact Us</font></a></td>
+				<td valign="bottom"><a href="#contact" class="menu_link scroll" style="text-decoration: none;"><font style="color: rgb(236,190,20);">Contact Us</font></a></td>
 				<td></td>
-				<td valign="bottom"><a href="views/login.php"><font style="color: rgb(236,190,20);">Login/Register</font></a></td>
+				<td valign="bottom"><a href="views/login.php" style="text-decoration: none;"><font style="color: rgb(236,190,20);">Login/Register</font></a></td>
 				<td></td>
 				<td valign="bottom"><div><input type="submit" name="account" value="Account" style="background-color: rgb(11,13,71); border: none; color: rgb(236,190,20); font-weight: bold;"></div></td>
 			</tr>
@@ -71,7 +71,7 @@
 		</div>
 		
 		
-			<a href="views/room_reserve.php"><div style="background-color: rgb(236,190,20);height: 150px; text-align: center;"><font size="15" style="color: white">Room Reservation</font></div></a>
+			<a href="views/room_reserve.php" style="text-decoration: none;"><div style="background-color: rgb(236,190,20);height: 150px; text-align: center;"><font size="15" style="color: white">Room Reservation</font></div></a>
 		<div>
 			<p style="text-align: center;"><span><font size="6" style="font-family: Californian FB;"><b>EXPERIENCE A GOOD STAY, ENJOY FANTASTIC<br> OFFERS</b></font></span><br> <span><font size="5" style="color: rgb(236,190,20); font-family: Californian FB;"><b>FIND OUR FRIENDLY WELCOMING RECEPTION</b></font></span></p>
 		</div>
@@ -149,19 +149,19 @@
 				 	<tr>
 				 		<td>
 				 			<img src="storage/images/r1.jpg" width="" height=""><br>
-				 			<span style="text-align: center;">Deluxe Room</span> &nbsp <span>$320</span> <a href="views/room_reserve.php">Book</a>
+				 			<span style="text-align: center;">Deluxe Room</span> &nbsp <span>$320</span> <a href="views/room_reserve.php" style="text-decoration: none;">Book</a>
 				 		</td>
 				 		<td>
 				 			<img src="storage/images/r2.jpg" width="" height=""><br>
-				 			<span style="text-align: center;">Luxury Room</span> &nbsp <span>$220</span> <a href="views/room_reserve.php">Book</a>
+				 			<span style="text-align: center;">Luxury Room</span> &nbsp <span>$220</span> <a href="views/room_reserve.php" style="text-decoration: none;">Book</a>
 				 		</td>
 				 		<td>
 				 			<img src="storage/images/r3.jpg" width="" height=""><br>
-				 			<span style="text-align: center;">Guest House</span> &nbsp <span>$180</span> <a href="views/room_reserve.php">Book</a>
+				 			<span style="text-align: center;">Guest House</span> &nbsp <span>$180</span> <a href="views/room_reserve.php" style="text-decoration: none;">Book</a>
 				 		</td>
 				 		<td>
 				 			<img src="storage/images/r4.jpg" width="" height=""><br>
-				 			<span style="text-align: center;">Single Room</span> &nbsp <span>$150</span> <a href="views/room_reserve.php">Book</a>
+				 			<span style="text-align: center;">Single Room</span> &nbsp <span>$150</span> <a href="views/room_reserve.php" style="text-decoration: none;">Book</a>
 				 		</td>
 
 				 	</tr>

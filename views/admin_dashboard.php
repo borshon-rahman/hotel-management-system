@@ -125,7 +125,7 @@
 	<body style="background-color: rgb(236,190,20); background-image: url(../storage/images/admin.jpg); background-blend-mode: lighten;">
 		<form method="post" action="" style="background-color: rgb(11, 13, 71);">
 			<span style="text-align: left;">
-				<a href="../index.php"><font size="6" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="6" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>
+				<a href="../index.php" style="text-decoration: none;"><font size="6" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="6" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>
 					<font size="2" style="font-family: verdana; color: rgb(160,150,16);">YOUR DREAM HOTEL</font>
 				</a>
 			</span>
@@ -139,15 +139,15 @@
 		<br><br>
 			<div id="navigation">
 				<font size="6" style="color: white;">Manage User</font><br>
-				<a href="javascript:;" onclick="add_user()"><font size="4" style="color: rgb(168,58,58);">Add user</font></a><br>
-				<a href="javascript:;" onclick="remove_user()"><font size="4" style="color: rgb(168,58,58);">Remove user</font></a><br><br>
+				<a href="javascript:;" onclick="add_user()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Add user</font></a><br>
+				<a href="javascript:;" onclick="remove_user()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Remove user</font></a><br><br>
 				<font size="6" style="color: white;">Manage Rooms</font><br>
-				<a href="javascript:;" onclick="add_room()"><font size="4" style="color: rgb(168,58,58);">Add Room</font></a><br>
-				<a href="javascript:;" onclick="remove_room()"><font size="4" style="color: rgb(168,58,58);">Remove Room</font></a><br>
-				<a href="javascript:;" onclick="room_reserve()"><font size="4" style="color: rgb(168,58,58);">Room Reserve</font></a><br>
-				<a href="javascript:;" onclick="available_room()"><font size="4" style="color: rgb(168,58,58);">Available Room</font></a><br>
-				<a href="javascript:;" onclick="reserved_room()"><font size="4" style="color: rgb(168,58,58);">Reserved Room</font></a><br>
-				<a href="javascript:;"><font size="6" style="color: rgb(168,58,58);">Room Reservation Requests</font></a>
+				<a href="javascript:;" onclick="add_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Add Room</font></a><br>
+				<a href="javascript:;" onclick="remove_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Remove Room</font></a><br>
+				<a href="javascript:;" onclick="room_reserve()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Room Reserve</font></a><br>
+				<a href="javascript:;" onclick="available_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Available Room</font></a><br>
+				<a href="javascript:;" onclick="reserved_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Reserved Room</font></a><br>
+				<a href="javascript:;" style="text-decoration: none;"><font size="6" style="color: rgb(168,58,58);">Room Reservation Requests</font></a>
 			</div>
 			<div id="content">
 				

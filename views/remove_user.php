@@ -37,7 +37,7 @@
 		
 		<form method="post" action="">
 			<center>
-				<span><font size="4" style="color: red"><b><?php echo "$msg"; ?></b></font></span>
+				<span><font size="4" style="color: red"><b id="message"><?php echo "$msg"; ?></b></font></span>
 				<table>
 					<tr>
 						<td><b>Username </b></td>

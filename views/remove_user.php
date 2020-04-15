@@ -11,7 +11,11 @@
 	}*/
 ?>
 <html>
-	<head></head>
+	<head>
+		<script>
+			
+		</script>
+	</head>
 	<body style="background-image: url(../storage/images/image.png); background-color: yellow; background-blend-mode: lighten;">
 		<?php
 			require "../models/db_connect.php";

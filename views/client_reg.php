@@ -29,6 +29,7 @@
 				if($_POST['pass'] == $_POST['cpass'])
 				{
 					$pass = $_POST['pass'];
+					$pass = md5($pass);
 					$query = "INSERT INTO login (user_name, password, status) VALUES ('$uname', '$pass', '$status')";
 					$result= execute($query);
 					$msg = "Registration Succesfull!";

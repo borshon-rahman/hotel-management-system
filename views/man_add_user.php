@@ -139,6 +139,7 @@
 				if($_POST['cpass'] == $_POST['pass'])
 				{
 					$pass = $_POST['pass'];
+					$pass = md5($pass);
 					$query1 = "INSERT INTO users(fname, lname, gender, permanent_adrs, present_adrs, city, zip_code, coountry, phone, email) VALUES ('$fname','$lname','$gender','$adrs1','$adrs2','$city','$zip','$country','$phone','$email')";
 					execute($query1);
 					$query2 = "INSERT INTO login(user_name, password, status) VALUES ('$uname','$pass','$status')";

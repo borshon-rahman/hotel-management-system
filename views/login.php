@@ -13,6 +13,7 @@
 		{
 			$uname = htmlspecialchars($_POST['uname']);
 			$pass = $_POST['pass'];
+			$pass = md5($pass);
 			if(empty($uname) && empty($pass))
 			{
 				$err_uname = "Username is Required";

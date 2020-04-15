@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2020 at 06:37 PM
+-- Generation Time: Apr 15, 2020 at 07:03 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `login` (
   `SN` int(8) NOT NULL,
   `user_name` varchar(30) NOT NULL,
-  `password` varchar(8) NOT NULL,
+  `password` varchar(50) NOT NULL,
   `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -40,10 +40,11 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`SN`, `user_name`, `password`, `status`) VALUES
-(1, 'admin', '1234', 'admin'),
-(2, 'manager', '1111', 'manager'),
-(3, 'stuff', '2222', 'stuff'),
-(4, 'client', '3333', 'client');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
+(2, 'manager', '1d0258c2440a8d19e716292b231e3190', 'manager'),
+(3, 'stuff', 'c13d88cb4cb02003daedb8a84e5d272a', 'stuff'),
+(4, 'client', '62608e08adc29a8d6dbc9754e659f125', 'client'),
+(12, 'borshon', 'd79c8788088c2193f0244d8f1f36d2db', 'stuff');
 
 -- --------------------------------------------------------
 
@@ -154,13 +155,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

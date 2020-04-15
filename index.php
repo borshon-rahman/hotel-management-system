@@ -2,45 +2,7 @@
 	<title>Home</title>
 	<head></head>
 	<body>
-		<?php
-			require "models/db_connect.php";
-			$uname = "";
-			$userStatus = "";
-			if(isset($_POST['account']))
-			{
-				session_start();
-				if(isset($_SESSION['loggedinuser']))
-				{
-					$uname = $_SESSION['loggedinuser'];
-					$query = "SELECT status FROM login WHERE user_name='$uname'";
-					$result = get($query);
-					if(mysqli_num_rows($result) > 0)
-					{
-						$rows = mysqli_fetch_assoc($result);
-						if($rows["status"] == "admin")
-						{
-							header("Location:views/admin_dashboard.php");
-						}
-						elseif($rows["status"] == "manager")
-						{
-							header("Location:views/manager_dashboard.php");
-						}
-						elseif($rows["status"] == "stuff")
-						{
-							header("Location:views/employee_dashboard.php");
-						}
-					}	
-				}
-				elseif(!isset($_SESSION['loggedinuser']))
-				{
-					header("Location:views/login.php");
-				}
-			}
-		?>
-
-	<p>
-		<form method="post" action="">
-			<div style="background-color: rgb(11, 13, 71);">
+		<div style="background-color: rgb(11, 13, 71);">
 		<table>
 			<tr>
 				<td><a href="index.php" style="text-decoration: none;"><font size="6" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="6" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>
@@ -58,19 +20,14 @@
 				<td></td>
 				<td valign="bottom"><a href="views/login.php" style="text-decoration: none;"><font style="color: rgb(236,190,20);">Login/Register</font></a></td>
 				<td></td>
-				<td valign="bottom"><div><input type="submit" name="account" value="Account" style="background-color: rgb(11,13,71); border: none; color: rgb(236,190,20); font-weight: bold;"></div></td>
+				<td valign="bottom"><a href="controller/account.php" style="text-decoration: none;"><font style="color: rgb(236,190,20);">Account</font></a></td>
 			</tr>
-
 		</table>
 		</div>
-		</form>
-		
-	</p>
+	
 		<hr>
 		<div style="width: 100%; height: 550px; background-image: url('storage/images/1.jpg');">
 		</div>
-		
-		
 			<a href="views/room_reserve.php" style="text-decoration: none;"><div style="background-color: rgb(236,190,20);height: 150px; text-align: center;"><font size="15" style="color: white">Room Reservation</font></div></a>
 		<div>
 			<p style="text-align: center;"><span><font size="6" style="font-family: Californian FB;"><b>EXPERIENCE A GOOD STAY, ENJOY FANTASTIC<br> OFFERS</b></font></span><br> <span><font size="5" style="color: rgb(236,190,20); font-family: Californian FB;"><b>FIND OUR FRIENDLY WELCOMING RECEPTION</b></font></span></p>

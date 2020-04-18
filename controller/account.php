@@ -23,6 +23,10 @@
 						{
 							header("Location:../views/employee_dashboard.php");
 						}
+						elseif($rows["status"] == "client")
+						{
+							header("Location:../views/client_dashboard.php");
+						}
 					}	
 				}
 				elseif(!isset($_SESSION['loggedinuser']))

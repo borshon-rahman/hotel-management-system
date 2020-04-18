@@ -37,7 +37,7 @@
 				<td></td>
 				<td valign="bottom"><a href="javascript:;" onclick="room_reserve();" style="text-decoration: none;"><font style="color: rgb(236,190,20);">Reserve Room</font></a></td>
 				<td></td>
-				<td valign="bottom"><a href="../controller/logout.php" style="text-decoration: none;"><font style="color: gray;"><b>Logout</b></font></a></td>
+				<td valign="bottom"><a href="../controller/logout.php" style="text-decoration: none;"><font style="color: rgb(236,190,20);"><b>Logout</b></font></a></td>
 			</tr>
 		</table>
 		</div>

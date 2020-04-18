@@ -4,11 +4,6 @@
 	{
 		header("Location:login.php");
 	}
-	if(isset($_POST['logout']))
-	{
-		session_destroy();
-		header("Location:login.php");
-	}
 ?>
 <html>
 	<title>Room Reservation</title>
@@ -80,7 +75,6 @@
 				else
 				{
 					$email = htmlspecialchars($_POST['email']);
-					
 					$country = $_POST['country'];
 					$room_type = $_POST['room_type'];
 					$available_room = $_POST['available_room'];
@@ -112,23 +106,9 @@
 					$checkout_month = "";
 					$checkout_year = "";
 					$msg = "Reservation Succesfull!";
-				}
-				
+				}	
 			}
-
 		?>
-		<form method="post" action="" style="background-color: rgb(11, 13, 71);">
-			<span style="text-align: left;">
-				&nbsp <a href="../index.php" style="text-decoration: none;"><font size="6" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="6" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>
-					&nbsp <font size="2" style="font-family: verdana; color: rgb(160,150,16);">YOUR DREAM HOTEL</font>
-				</a>
-			</span>
-			<div style="text-align: center;">
-				<font size="8" style="color: white;">Room Reservation</font>
-				<div style="text-align: right;"><input type="submit" name="logout" value="Log out" style="background-color: rgb(11, 13, 71); color: gray;">
-				</div>
-			</div>
-		</form>
 		<hr>
 		<center>
 			<form method="post" action="" style="background-color: gray; background-image: url(../storage/images/image.png);">

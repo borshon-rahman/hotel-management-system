@@ -28,7 +28,7 @@
 		<hr>
 		<div style="width: 100%; height: 550px; background-image: url('storage/images/1.jpg');">
 		</div>
-			<a href="views/room_reserve.php" style="text-decoration: none;"><div style="background-color: rgb(236,190,20);height: 150px; text-align: center;"><font size="15" style="color: white;">Room Reservation</font></div></a>
+			<a href="controller/account.php" style="text-decoration: none;"><div style="background-color: rgb(236,190,20);height: 150px; text-align: center;"><font size="15" style="color: white;">Room Reservation</font></div></a>
 		<div>
 			<p style="text-align: center;"><span><font size="6" style="font-family: Californian FB;"><b>EXPERIENCE A GOOD STAY, ENJOY FANTASTIC<br> OFFERS</b></font></span><br> <span><font size="5" style="color: rgb(236,190,20); font-family: Californian FB;"><b>FIND OUR FRIENDLY WELCOMING RECEPTION</b></font></span></p>
 		</div>

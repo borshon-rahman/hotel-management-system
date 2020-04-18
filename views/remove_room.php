@@ -4,49 +4,59 @@
 	{
 		header("Location:login.php");
 	}
-	if(isset($_POST['logout']))
+	/*if(isset($_POST['logout']))
 	{
 		session_destroy();
 		header("Location:login.php");
-	}
+	}*/
 ?>
 
 <html>
 	<title></title>
-	<head></head>
+	<head>
+		<script>
+			function remove()
+			{
+				var error = "";
+				var room_number = document.getElementById("rn").value;
+				if(room_number == "")
+				{
+					error = "Room number required";
+					document.getElementById("msg").innerHTML = error;
+				}
+				else
+				{
+					var xhtml = new XMLHttpRequest();
+					xhtml.onreadystatechange = function()
+					{
+						if(xhtml.readyState == 4 && xhtml.status == 200)
+						{
+							var response = xhtml.responseText;
+							if(response == true)
+							{
+								document.getElementById("msg").innerHTML = "Room Removed!";
+							} 
+						}
+					}
+					xhtml.open("GET","../controller/remove_room_controller.php",true);
+					xhtml.send("rn="+room_number);
+				}
+			}
+
+		</script>
+	</head>
 	<body style="background-color: green;">
-	<?php
-		require "../models/db_connect.php";
-		$rn = "";
-		$err_rn = "";
-		$msg = "";
-		if(isset($_POST['remove']))
-		{
-			if(empty($_POST['rn']))
-			{
-				$err_rn = "Enter Room number";
-			}
-			else
-			{
-				$rn = $_POST['rn'];
-				$query = "DELETE FROM room WHERE room_number='$rn'";
-				execute($query);
-				$msg = "Room has been deleted!";
-			}
-		}
-	?>
-		
 		<center>
-			<font size="4" style="color: blue;"><?php echo "$msg"; ?></font>
-			<form method="post" action="">
+			<font id="msg" size="4" style="color: blue;"></font>
+			
 				<table>
 					<tr>
-						<td>Room Number <input type="text" name="rn"></td>
+						<td>Room Number <input type="text" name="rn" id="rn"><br></td>
 					</tr>
 				</table>
 				<br>
-				<input type="submit" name="remove" value="Remove">
-			</form>
+				<input type="button" name="remove" value="Remove" onclick="remove()">
+			
 		</center>
 	</body>
 </html>

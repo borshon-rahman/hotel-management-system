@@ -4,11 +4,6 @@
 	{
 		header("Location:login.php");
 	}
-	if(isset($_POST['logout']))
-	{
-		session_destroy();
-		header("Location:login.php");
-	}
 ?>
 <html>
 	<title>Reception</title>
@@ -71,10 +66,10 @@
 		</script>
 	</head>
 	<body style="background-color: rgb(236,190,20); background-image: url(../storage/images/admin.jpg); background-blend-mode: lighten;">
-		<div style="background-color: rgb(11, 13, 71)">
-			<form method="post" action="" style="text-align: right;">
-				<input type="submit" name="logout" value="Log out">
-			</form> 
+		<div style="background-color: rgb(11, 13, 71);">
+			<div style="text-align: right;">
+				<a href="../controller/logout.php" style="text-decoration: none;"><font style="color: gray;"><b>Logout</b></font></a>
+			</div>
 	    	<div style="background-image: url(../storage/images/reception.jpg); height: 400;width: 100%; background-repeat: no-repeat; background-size: 100% 100%;">
 	    		<span style="text-align: left;">
 					<a href="../index.php" style="text-decoration: none;"><font size="6" style="font-family: Times New Roman; color: white;"><b>SUN</b></font><font size="6" style="font-family: Times New Roman; color: rgb(236,190,20);"><b> RISE</b></font><br>

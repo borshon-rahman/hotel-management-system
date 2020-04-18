@@ -21,6 +21,10 @@
 			{
 				header("Location:employee_dashboard.php");
 			}
+			elseif($rows["status"] == "client")
+			{
+				header("Location:client_dashboard.php");
+			}
 		}	
 	}
 ?>
@@ -30,6 +34,7 @@
 	<head></head>
 	<body style="background-image: url(../storage/images/login.jpg);">
 		<?php
+		
 		$uname = "";
 		$err_uname = "";
 		$pass = "";
@@ -87,7 +92,7 @@
 						session_start();
 						$_SESSION["loggedinuser"]= $uname;
 							
-						header("Location:room_reserve.php");
+						header("Location:client_dashboard.php");
 					}
 				}
 				else

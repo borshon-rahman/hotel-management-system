@@ -14,7 +14,7 @@
 <html>
 	<title></title>
 	<head></head>
-	<body style="background-color: rgb(34,139,34); background-image: url(../storage/images/add_user.jpg); background-blend-mode: lighten;">
+	<body>
 		<?php
 		require "../models/db_connect.php";
 		$fname = "";
@@ -201,7 +201,7 @@
 
 		?>
 		
-	<form method="post" action="">
+	<form method="post" action="" style="background-color: rgb(34,139,34); background-image: url(../storage/images/add_user.jpg); background-blend-mode: lighten;">
 		<center>
 			<font size="4" style="color: blue;"><?php echo "$msg"; ?></font>
 			<h3>Personal Information</h3>

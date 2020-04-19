@@ -14,41 +14,15 @@
 <html>
 	<title></title>
 	<head>
-		<script>
-			function remove()
-			{
-				alert("Working!");
-				var error = "";
-				var room_number = document.getElementById("rn").value;
-				if(room_number == "")
-				{
-					error = "Room number required";
-					document.getElementById("msg").innerHTML = error;
-				}
-				else
-				{
-					var xhtml = new XMLHttpRequest();
-					xhtml.onreadystatechange = function()
-					{
-						if(xhtml.readyState == 4 && xhtml.status == 200)
-						{
-							var response = xhtml.responseText;
-							if(response == true)
-							{
-								document.getElementById("msg").innerHTML = "Room Removed!";
-							} 
-						}
-					}
-					xhtml.open("GET","../controller/remove_room_controller.php",true);
-					xhtml.send("rn="+room_number);
-				}
-			}
-
-		</script>
+		<script></script>
 	</head>
 	<body style="background-color: green;">
+		<?php
+			require "../controller/room_controller.php";
+			$rooms = rooms();
+		?>
 		<center>
-			<font id="msg" size="4" style="color: blue;"></font>
+			<font id="msg" size="2" style="color: red;"></font>
 			
 				<table>
 					<tr>
@@ -57,6 +31,24 @@
 				</table>
 				<br>
 				<input type="button" name="remove" value="Remove" onclick="remove()">
+				<br><br>
+				<table align="center" border="1" style="border-collapse: collapse; text-align: center;">
+				<tr>
+					<th>Room Number</th>
+					<th>Room Type</th>
+					<th>Status</th>
+				</tr>
+				<?php
+					foreach ($rooms as $room)
+					{
+						echo "<tr>";
+						echo "<td>".$room["room_number"]."</td>";
+						echo "<td>".$room["type"]."</td>";
+						echo "<td>".$room["status"]."</td>";
+						echo "</tr>";
+					}
+				?>
+			</table>
 			
 		</center>
 	</body>

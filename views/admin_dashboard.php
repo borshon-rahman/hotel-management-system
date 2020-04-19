@@ -23,99 +23,7 @@
 				padding: 5px;
 			}
 		</style>
-		<script>
-			function add_user()
-			{
-				var xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function()
-				{
-					if(xhttp.readyState == 4 && xhttp.status == 200)
-					{
-						document.getElementById("content").innerHTML = xhttp.responseText;
-					}
-				}
-				xhttp.open("GET","add_user.php",true);
-				xhttp.send();
-			}
-			function remove_user()
-			{
-				var xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function()
-				{
-					if(xhttp.readyState == 4 && xhttp.status == 200)
-					{
-						document.getElementById("content").innerHTML = xhttp.responseText;
-					}
-				}
-				xhttp.open("GET","remove_user.php",true);
-				xhttp.send();
-			}
-			function add_room()
-			{
-				var xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function()
-				{
-					if(xhttp.readyState == 4 && xhttp.status == 200)
-					{
-						document.getElementById("content").innerHTML = xhttp.responseText;
-					}
-				}
-				xhttp.open("GET","add_room.php",true);
-				xhttp.send();
-			}
-			function remove_room()
-			{
-				var xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function()
-				{
-					if(xhttp.readyState == 4 && xhttp.status == 200)
-					{
-						document.getElementById("content").innerHTML = xhttp.responseText;
-					}
-				}
-				xhttp.open("GET","remove_room.php",true);
-				xhttp.send();
-			}
-			function room_reserve()
-			{
-				var xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function()
-				{
-					if(xhttp.readyState == 4 && xhttp.status == 200)
-					{
-						document.getElementById("content").innerHTML = xhttp.responseText;
-					}
-				}
-				xhttp.open("GET","room_reserve.php",true);
-				xhttp.send();
-			}
-			function available_room()
-			{
-				var xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function()
-				{
-					if(xhttp.readyState == 4 && xhttp.status == 200)
-					{
-						document.getElementById("content").innerHTML = xhttp.responseText;
-					}
-				}
-				xhttp.open("GET","available_room.php",true);
-				xhttp.send();
-			}
-			function reserved_room()
-			{
-				var xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function()
-				{
-					if(xhttp.readyState == 4 && xhttp.status == 200)
-					{
-						document.getElementById("content").innerHTML = xhttp.responseText;
-					}
-				}
-				xhttp.open("GET","reserved_room.php",true);
-				xhttp.send();
-			}
-		</script>
+		<script src="scripts/admin_dashboard_scripts.js"></script>
 	</head>
 	<body style="background-color: rgb(236,190,20); background-image: url(../storage/images/admin.jpg); background-blend-mode: lighten;">
 		<div style="background-color: rgb(11, 13, 71);">
@@ -125,8 +33,8 @@
 				</a>
 			</span>
 			<div style="text-align: center;">
-				<font size="8" style="color: white;">Admin Panel</font>
-				<div style="text-align: right;"><a href="../controller/logout.php" style="text-decoration: none;"><font style="color: gray;"><b>Logout</b></font></a>
+				<a href="admin_dashboard.php" style="text-decoration: none;"><font size="8" style="color: white;">Admin Dashboard</font></a>
+				<div> &nbsp <a href="../index.php" style="text-align: left;"><font style="color: rgb(236,190,20);">Home</font></a> &nbsp <a href="../controller/logout.php" style="text-decoration: none; text-align: right;"><font style="color: rgb(236,190,20);"><b>Logout</b></font></a> 
 				</div>
 			</div>
 		</div>
@@ -138,7 +46,7 @@
 				<a href="javascript:;" onclick="remove_user()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Remove user</font></a><br><br>
 				<font size="6" style="color: white;">Manage Rooms</font><br>
 				<a href="javascript:;" onclick="add_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Add Room</font></a><br>
-				<a href="javascript:;" onclick="remove_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Remove Room</font></a><br>
+				<a href="javascript:;" onclick="remove_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Rooms</font></a><br>
 				<a href="javascript:;" onclick="room_reserve()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Room Reserve</font></a><br>
 				<a href="javascript:;" onclick="available_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Available Room</font></a><br>
 				<a href="javascript:;" onclick="reserved_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Reserved Room</font></a><br>

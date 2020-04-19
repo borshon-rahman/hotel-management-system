@@ -12,4 +12,10 @@
 		$result = get($query);
 		return $result;
 	}
+	function rooms()
+	{
+		$query = "SELECT * FROM room";
+		$result = get($query);
+		return $result;
+	}
 ?>

@@ -17,6 +17,7 @@
 		<script>
 			function remove()
 			{
+				alert("Working!");
 				var error = "";
 				var room_number = document.getElementById("rn").value;
 				if(room_number == "")

@@ -4,8 +4,10 @@
 	{
 		header("Location:login.php");
 	}
+	$user = $_SESSION['loggedinuser'];
+	require "../controller/user_controller.php";
+	$information = user_details($user);
 ?>
-
 <html>
 	<title></title>
 	<head>	
@@ -27,7 +29,59 @@
 		</table>
 		</div>
 		<div>
-			<h1 style="text-align: center;">Account Information</h1>
+			<font size="10" style="text-align: center;">Profile</font>
+			<div style="background-color: rgb(255,153,51); height: 250px; text-align: center;">
+				<font size="8"><?php foreach($information as $info) {echo $info["user_name"];} ?></font>
+				<table align="center" border="4" style="width: 1400px; height: 150px; border-collapse: collapse;">
+					<tr>
+						<th><font size="5">First Name</font></th>
+						<th></th>
+						<th><font size="5">Last Name</font></th>
+						<th></th>
+						<th><font size="5">Gender</font></th>
+						<th></th>
+						<th><font size="5">Permanent Address</font></th>
+						<th></th>
+						<th><font size="5">Present Address</font></th>
+						<th></th>
+						<th><font size="5">City</font></th>
+						<th></th>
+						<th><font size="5">Zip Code</font></th>
+						<th></th>
+						<th><font size="5">Country</font></th>
+						<th></th>
+						<th><font size="5">Phone</font></th>
+						<th></th>
+						<th><font size="5">Email</font></th>
+					</tr>
+					<?php
+						foreach($information as $info)
+						{
+							echo "<tr>";
+							echo "<td>".$info["fname"]."</td>";
+							echo "<td></td>";
+							echo "<td>".$info["lname"]."</td>";
+							echo "<td></td>";
+							echo "<td>".$info["gender"]."</td>";
+							echo "<td></td>";
+							echo "<td>".$info["permanent_adrs"]."</td>";
+							echo "<td></td>";
+							echo "<td>".$info["present_adrs"]."</td>";
+							echo "<td></td>";
+							echo "<td>".$info["city"]."</td>";
+							echo "<td></td>";
+							echo "<td>".$info["zip_code"]."</td>";
+							echo "<td></td>";
+							echo "<td>".$info["country"]."</td>";
+							echo "<td></td>";
+							echo "<td>".$info["phone"]."</td>";
+							echo "<td></td>";
+							echo "<td>".$info["email"]."</td>";
+							echo "</tr>";
+						}
+					?>
+				</table>
+			</div>
 		</div>
 		<div id="content">
 			

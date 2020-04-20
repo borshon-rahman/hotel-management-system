@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2020 at 07:03 PM
+-- Generation Time: Apr 20, 2020 at 02:43 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `login` (
-  `SN` int(8) NOT NULL,
   `user_name` varchar(30) NOT NULL,
   `password` varchar(50) NOT NULL,
   `status` varchar(20) NOT NULL
@@ -39,12 +38,12 @@ CREATE TABLE `login` (
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`SN`, `user_name`, `password`, `status`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
-(2, 'manager', '1d0258c2440a8d19e716292b231e3190', 'manager'),
-(3, 'stuff', 'c13d88cb4cb02003daedb8a84e5d272a', 'stuff'),
-(4, 'client', '62608e08adc29a8d6dbc9754e659f125', 'client'),
-(12, 'borshon', 'd79c8788088c2193f0244d8f1f36d2db', 'stuff');
+INSERT INTO `login` (`user_name`, `password`, `status`) VALUES
+('admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
+('borshon', 'fa246d0262c3925617b0c72bb20eeb1d', 'client'),
+('client', '62608e08adc29a8d6dbc9754e659f125', 'client'),
+('manager', '1d0258c2440a8d19e716292b231e3190', 'manager'),
+('stuff', 'c13d88cb4cb02003daedb8a84e5d272a', 'stuff');
 
 -- --------------------------------------------------------
 
@@ -88,8 +87,7 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`room_number`, `type`, `status`) VALUES
-(1, 'Deluxe', 'available'),
-(2, 'Deluxe', 'reserved');
+(1, 'Deluxe', 'available');
 
 -- --------------------------------------------------------
 
@@ -99,6 +97,7 @@ INSERT INTO `room` (`room_number`, `type`, `status`) VALUES
 
 CREATE TABLE `users` (
   `SN` int(8) NOT NULL,
+  `user_name` varchar(30) NOT NULL,
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `gender` varchar(8) NOT NULL,
@@ -106,7 +105,7 @@ CREATE TABLE `users` (
   `present_adrs` varchar(100) NOT NULL,
   `city` varchar(15) NOT NULL,
   `zip_code` varchar(10) NOT NULL,
-  `coountry` varchar(20) NOT NULL,
+  `country` varchar(20) NOT NULL,
   `phone` varchar(15) NOT NULL,
   `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -115,8 +114,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`SN`, `fname`, `lname`, `gender`, `permanent_adrs`, `present_adrs`, `city`, `zip_code`, `coountry`, `phone`, `email`) VALUES
-(3, 'jhjhfjh', 'hgvjfj', 'Female', 'hgfhgfgh', 'jhbkjbkj', 'jbknbj', 'gvkvbkh', 'gkjgkj', 'hgvjhvkj', 'jnb,mb,m');
+INSERT INTO `users` (`SN`, `user_name`, `fname`, `lname`, `gender`, `permanent_adrs`, `present_adrs`, `city`, `zip_code`, `country`, `phone`, `email`) VALUES
+(1, 'borshon', 'Borshon', 'Rahman', 'Male', '10/1 J.N Majumdar Lane, Courtpara, Kushtia', '10/1 J.N Majumdar Lane, Courtpara, Kushtia', 'Kushtia', '7000', 'Bangladesh', '01730264304', 'fortuneborshon@gmail.com'),
+(2, 'admin', 'Richard', 'Parker', 'Male', '829 Van Dyke St.\r\nHoward Beach', '829 Van Dyke St.\r\nHoward Beach', 'NewYork', '11414', 'United State', '+80236-564-455', 'parker@gmail.com'),
+(3, 'manager', 'Sufat', 'Ullah', 'Male', '2 Ram Chandra Ray Chowdhury Rd', '2 Ram Chandra Ray Chowdhury Rd', 'Kushtia', '7000', 'Bangladesh', '1012134576789', 'zxcvb@aiub.edu'),
+(4, 'client', 'Mehzabien', 'Chowdhury', 'Female', 'House building, Uttara', 'House building, Uttara', 'Dhaka', '1208', 'Bangladesh', '+8801755555555', 'mehzabien@yahoo.com');
 
 --
 -- Indexes for dumped tables
@@ -126,8 +128,7 @@ INSERT INTO `users` (`SN`, `fname`, `lname`, `gender`, `permanent_adrs`, `presen
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`SN`),
-  ADD UNIQUE KEY `UNIQUE` (`user_name`);
+  ADD PRIMARY KEY (`user_name`);
 
 --
 -- Indexes for table `reserved_room`
@@ -145,23 +146,34 @@ ALTER TABLE `room`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`SN`);
+  ADD PRIMARY KEY (`SN`),
+  ADD KEY `user_name` (`user_name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `login`
---
-ALTER TABLE `login`
-  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `reserved_room`
+--
+ALTER TABLE `reserved_room`
+  ADD CONSTRAINT `reserved_room_ibfk_1` FOREIGN KEY (`room_number`) REFERENCES `room` (`room_number`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`user_name`) REFERENCES `login` (`user_name`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

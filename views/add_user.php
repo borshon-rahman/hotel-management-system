@@ -13,251 +13,67 @@
 
 <html>
 	<title></title>
-	<head></head>
+	<head>
+		<script></script>
+	</head>
 	<body>
-		<?php
-		require "../models/db_connect.php";
-		$fname = "";
-		$err_fname = "";
-		$lname = "";
-		$err_lname = "";
-		$gender = "";
-		$err_gender = "";
-		$adrs1 = "";
-		$err_adrs1 = "";
-		$adrs2 = "";
-		$err_adrs2 = "";
-		$city = "";
-		$err_city = "";
-		$zip = "";
-		$err_zip = "";
-		$country = "";
-		$err_country = "";
-		$phone = "";
-		$err_phone = "";
-		$email = "";
-		$err_email = "";
-		$uname = "";
-		$err_uname = "";
-		$pass = "";
-		$err_pass = "";
-		$cpass = "";
-		$err_cpass = "";
-		$status = "";
-		$err_status = "";
-		$msg = "";
-		if(isset($_POST['submit']))
-		{
-			if(empty($_POST['fname']))
-			{
-				$err_fname = "First Name is required";
-			}
-			else
-			{
-				$fname = htmlspecialchars($_POST['fname']);
-			}
-			if(empty($_POST['lname']))
-			{
-				$err_lname = "Last Name is required";
-			}
-			else
-			{
-				$lname = htmlspecialchars($_POST['lname']);
-			}
-			if(!isset($_POST['gender']))
-			{
-				$err_gender = "Gender Required";
-			}
-			else
-			{
-				$gender = $_POST['gender'];
-			}
-			if(empty($_POST['adrs1']))
-			{
-				$err_adrs1 = "Permanent Address Required";
-			}
-			else
-			{
-				$adrs1 = htmlspecialchars($_POST['adrs1']);
-			}
-			if(empty($_POST['adrs2']))
-			{
-				$err_adrs2 = "Present Address Required";
-			}
-			else
-			{
-				$adrs2 = htmlspecialchars($_POST['adrs2']);
-			}
-			if(empty($_POST['city']))
-			{
-				$err_city = "City is required";
-			}
-			else
-			{
-				$city = htmlspecialchars($_POST['city']);
-			}
-			if(empty($_POST['zip']))
-			{
-				$err_zip = "Zip Code is required";
-			}
-			else
-			{
-				$zip = htmlspecialchars($_POST['zip']);
-			}
-			if(empty($_POST['country']))
-			{
-				$err_country = "Country is required";
-
-			}
-			else
-			{
-				$country = htmlspecialchars($_POST['country']);
-			}
-			if(empty($_POST['phone']))
-			{
-				$err_phone = "Phone Number is required";
-
-			}
-			else
-			{
-				$phone = htmlspecialchars($_POST['phone']);
-			}
-			if(empty($_POST['email']))
-			{
-				$err_email = "Email is required";
-
-			}
-			else
-			{
-				$email = htmlspecialchars($_POST['email']);
-			}
-			if(empty($_POST['uname']))
-			{
-				$err_uname = "Username is required";
-			}
-			else
-			{
-				$uname = htmlspecialchars($_POST['uname']);
-			}
-			if(empty($_POST['status']))
-			{
-				$err_status = "Status required";
-			}
-			else
-			{
-				$status = htmlspecialchars($_POST['status']);
-			}
-			if(empty($_POST['pass']))
-			{
-				$err_pass = "Password is required";
-			}
-			else
-			{
-				if($_POST['cpass'] == $_POST['pass'])
-				{
-					$pass = $_POST['pass'];
-					$pass = md5($pass);
-					$query1 = "INSERT INTO users(fname, lname, gender, permanent_adrs, present_adrs, city, zip_code, coountry, phone, email) VALUES ('$fname','$lname','$gender','$adrs1','$adrs2','$city','$zip','$country','$phone','$email')";
-					execute($query1);
-					$query2 = "INSERT INTO login(user_name, password, status) VALUES ('$uname','$pass','$status')";
-					execute($query2);
-
-					$fname = "";
-					$err_fname = "";
-					$lname = "";
-					$err_lname = "";
-					$gender = "";
-					$err_gender = "";
-					$adrs1 = "";
-					$err_adrs1 = "";
-					$adrs2 = "";
-					$err_adrs2 = "";
-					$city = "";
-					$err_city = "";
-					$zip = "";
-					$err_zip = "";
-					$country = "";
-					$err_country = "";
-					$phone = "";
-					$err_phone = "";
-					$email = "";
-					$err_email = "";
-					$uname = "";
-					$err_uname = "";
-					$pass = "";
-					$err_pass = "";
-					$cpass = "";
-					$err_cpass = "";
-					$status = "";
-					$err_status = "";
-					$msg = "User Succesfully Registered!";
-				}
-				else
-				{
-					$err_cpass = "Password does not matched";
-				}
-			}
-		}
-
-		?>
-		
-	<form method="post" action="" style="background-color: rgb(34,139,34); background-image: url(../storage/images/add_user.jpg); background-blend-mode: lighten;">
+	<div style="background-color: rgb(34,139,34); background-image: url(../storage/images/add_user.jpg); background-blend-mode: lighten;">
 		<center>
-			<font size="4" style="color: blue;"><?php echo "$msg"; ?></font>
+			<font id="msg" size="4" style="color: blue;"></font>
 			<h3>Personal Information</h3>
 			<table>
 				<tr>
 					<td><b><font size="2" style="color: red">*</font>First Name: </b></td>
-					<td><input type="text" name="fname" value="<?php echo "$fname"; ?>"><br>
-						<font size="2" style="color: red"><?php echo "$err_fname"; ?></font>
+					<td><input id="fname" type="text" name="fname"><br>
+						<font id="err_fname" size="2" style="color: red"></font>
 				</td>
 				</tr>
 				<tr>
 					<td><b><font size="2" style="color: red">*</font>Last Name: </b></td>
-					<td><input type="text" name="lname" value="<?php echo "$lname"; ?>"><br>
-						<font size="2" style="color: red"><?php echo "$err_lname"; ?></font></td>
+					<td><input id="lname" type="text" name="lname" value=""><br>
+						<font id="err_lname" size="2" style="color: red"></font></td>
 				</tr>
 				<tr>
 					<td><b><font size="2" style="color: red">*</font>Gender </b></td>
-					<td><input type="radio" name="gender" value="Male"> Male <input type="radio" name="gender" value="Female"> Female <br>
-						<font size="2" style="color: red"><?php echo "$err_gender"; ?></font></td>
+					<td><input id="gender" type="radio" name="gender" value="Male"> Male <input id="gender" type="radio" name="gender" value="Female"> Female <br>
+						<font id="err_gender" size="2" style="color: red"></font></td>
 				</tr>
 				<tr>
 					<td><b><font size="2" style="color: red">*</font>Permanent Address: </b></td>
-					<td><input type="text" name="adrs1" value="<?php echo "$adrs1"; ?>"><br>
-						<font size="2" style="color: red"><?php echo "$err_adrs1"; ?></font></td>
+					<td><input id="adrs1" type="text" name="adrs1" value=""><br>
+						<font id="err_p_address" size="2" style="color: red"></font></td>
 				</tr>
 				<tr>
 					<td><b><font size="2" style="color: red">*</font>Present Address: </b></td>
-					<td><input type="address" name="adrs2" value="<?php echo "$adrs2"; ?>"><br>
-						<font size="2" style="color: red"><?php echo "$err_adrs2"; ?></font>
+					<td><input id="adrs2" type="address" name="adrs2" value=""><br>
+						<font id="err_pre_address" size="2" style="color: red"></font>
 					</td>
 				</tr>
 				<tr>
 					<td><b><font size="2" style="color: red">*</font>City: </b></td>
-					<td><input type="text" name="city" value="<?php echo "$city"; ?>"><br>
-						<font size="2" style="color: red"><?php echo "$err_city"; ?></font>
+					<td><input id="city" type="text" name="city" value=""><br>
+						<font id="err_city" size="2" style="color: red"></font>
 					</td>
 				</tr>
 				<tr>
 					<td><b><font size="2" style="color: red">*</font>Zip Code </b></td>
-					<td><input type="text" name="zip" value="<?php echo "$zip"; ?>"><br>
-						<font size="2" style="color: red"><?php echo "$err_zip"; ?></font></td>
+					<td><input id="zip" type="text" name="zip" value=""><br>
+						<font id="err_zip" size="2" style="color: red"></font></td>
 				</tr>
 				<tr>
 					<td><b><font size="2" style="color: red">*</font>Country </b></td>
-					<td><input type="text" name="country" value="<?php echo "$country"; ?>"><br>
-						<font size="2" style="color: red"><?php echo "$err_country"; ?></font></td>
+					<td><input id="country" type="text" name="country" value=""><br>
+						<font id="err_country" size="2" style="color: red"></font></td>
 				</tr>
 				<tr>
 					<td><b><font size="2" style="color: red">*</font>Phone </b></td>
-					<td><input type="text" name="phone" value="<?php echo "$phone"; ?>"><br>
-						<font size="2" style="color: red"><?php echo "$err_phone"; ?></font></td>
+					<td><input id="phone" type="text" name="phone" value=""><br>
+						<font id="err_phone" size="2" style="color: red"></font></td>
 				</tr>
 				<tr>
 					<td><b><font size="2" style="color: red">*</font>Email</b></td>
-					<td><input type="text" name="email" value="<?php echo "$email"; ?>"><br>
-						<font size="2" style="color: red"><?php echo "$err_email"; ?></font></td>
+					<td><input id="email" type="text" name="email" value=""><br>
+						<font id="err_email" size="2" style="color: red"></font></td>
 				</tr>
 			</table>
 		</center>
@@ -266,28 +82,28 @@
 			<table>
 				<tr>
 					<td><b>Username: </b></td>
-					<td><input type="text" name="uname" value="<?php echo "$uname"; ?>"><br>
-						<font size="2" style="color: red"><?php echo "$err_uname"; ?></font></td>
+					<td><input id="uname" type="text" name="uname" value=""><br>
+						<font id="err_uname" size="2" style="color: red"></font></td>
 				</tr>
 				<tr>
 					<td><b>Status: </b></td>
-					<td><input type="text" name="status" value="<?php echo "$status"; ?>"><br>
-						<font size="2" style="color: red"><?php echo "$err_status"; ?></font></td>
+					<td><input id="status" type="text" name="status" value=""><br>
+						<font id="err_status" size="2" style="color: red"></font></td>
 				</tr>
 				<tr>
 					<td><b>Password </b></td>
-					<td><input type="password" name="pass"><br>
-						<font size="2" style="color: red"><?php echo "$err_pass"; ?></font></td>
+					<td><input id="pass" type="password" name="pass"><br>
+						<font id="err_pass" size="2" style="color: red"></font></td>
 				</tr>
 				<tr>
 					<td><b>Confirm Password </b></td>
-					<td><input type="password" name="cpass"><br>
-						<font size="2" style="color: red"><?php echo "$err_cpass"; ?></font></td>
+					<td><input id="cpass" type="password" name="cpass"><br>
+						<font id="err_cpass" size="2" style="color: red"></font></td>
 				</tr>
 			</table>
 			<br>
-			<input type="submit" name="submit" value="Submit" style="background-color: blue; font-weight: bold;">
+			<button onclick="user_add()" style="background-color: blue; font-weight: bold;">Submit</button>
 		</center>
-	</form>
+	</div>
 	</body>
 </html>

@@ -17,39 +17,17 @@
 		</script>
 	</head>
 	<body style="background-image: url(../storage/images/image.png); background-color: yellow; background-blend-mode: lighten;">
-		<?php
-			require "../models/db_connect.php";
-			$uname = "";
-			$err = "";
-			$msg = "";
-			if(isset($_POST['delete']))
-			{
-				if(empty($_POST['uname']))
-				{
-					$err = "Enter Username";
-				}
-				else
-				{
-					$uname = htmlspecialchars($_POST['uname']);
-
-					$query = "DELETE FROM login WHERE user_name='$uname'";
-					execute($query);
-					$msg = "User Removed";
-				}
-			}
-		?>
-		
-		<form method="post" action="">
+		<div>
 			<center>
-				<span><font size="4" style="color: red"><b id="message"><?php echo "$msg"; ?></b></font></span>
+				<span><font size="4" style="color: red"><b id="message"></b></font></span>
 				<table>
 					<tr>
 						<td><b>Username </b></td>
-						<td><input type="text" name="uname"> &nbsp <font size="2" style="color: red"><b><?php echo "$err"; ?></b></font></td>
+						<td><input id="uname" type="text" name="uname"> &nbsp <font size="2" style="color: red"><b id="err_uname"></b></font></td>
 					</tr>
 				</table>
-				<input type="submit" name="delete" value="Discard">
+				<button onclick="removeUser()">Discard</button>
 			</center>
-		</form>
+		</div>
 	</body>
 </html>

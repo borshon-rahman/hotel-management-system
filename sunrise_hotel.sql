@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2020 at 06:13 PM
+-- Generation Time: May 02, 2020 at 12:01 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -87,7 +87,15 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`room_number`, `type`, `status`) VALUES
-(1, 'Deluxe', 'available');
+(1, 'Deluxe', 'available'),
+(2, 'Deluxe', 'available'),
+(3, 'Deluxe', 'available'),
+(4, 'Deluxe', 'available'),
+(5, 'Luxury', 'available'),
+(6, 'Luxury', 'available'),
+(7, 'Single', 'available'),
+(8, 'Deluxe', 'available'),
+(9, 'Guest House', 'available');
 
 -- --------------------------------------------------------
 
@@ -157,7 +165,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

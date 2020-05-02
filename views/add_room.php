@@ -14,45 +14,23 @@
 <html>
 	<title></title>
 	<head></head>
-	<body style="background-color: green;">
-	<?php
-		require "../models/db_connect.php";
-		$rn = "";
-		$err_rn = "";
-		$rtype = "";
-		$msg = "";
-		if(isset($_POST['add']))
-		{
-			$rtype = htmlspecialchars($_POST['rtype']);
-			if(empty($_POST['rn']))
-			{
-				$err_rn = "Enter Room number";
-			}
-			else
-			{
-				$rn = $_POST['rn'];
-				$query = "INSERT INTO room VALUES ('$rn','$rtype')";
-				execute($query);
-				$msg = "Room Added!";
-			}
-		}
-	?>
-		
+	<body style="background-color: green;">		
 		<center>
-			<font size="4" style="color: blue;"><?php echo "$msg"; ?></font>
-			<form method="post" action="">
+			<font id="msg" size="4" style="color: blue;"></font>
+			<div>
 				<table>
 					<tr>
-						<td>Room Number <input type="Number" name="rn"></td>
+						<td>Room Number <input id="rn" type="text" name="rn"> &nbsp <font id="err_rn" size="4" style="color: blue;"></font>
+						</td>
 					</tr>
 					<tr>
-						<td>Room Type <select name="rtype"><option>Deluxe</option><option>Luxury</option><option>Guest House</option><option>Single</option></select>
+						<td>Room Type <select id="rtype" name="rtype"><option>Deluxe</option><option>Luxury</option><option>Guest House</option><option>Single</option></select>
 						</td>
 					</tr>
 				</table>
 				<br><br>
-				<input type="submit" name="add" value="Add">
-			</form>
+				<button onclick="addRoom()">Add</button>
+			</div>
 		</center>
 	</body>
 </html>

@@ -178,6 +178,41 @@ function add_user()
 				xhttp.open("GET","remove_user.php",true);
 				xhttp.send();
 			}
+			function removeUser()
+			{
+				var uname = document.getElementById("uname").value;
+				var message = "";
+				var err_uname = "";
+				if(uname == "")
+				{
+					err_uname = "Enter Username";
+					document.getElementById("err_uname").innerHTML = err_uname;
+				}
+				else
+				{
+					var xhtml = new XMLHttpRequest();
+					xhtml.onreadystatechange = function()
+					{
+						if(xhtml.readyState == 4 && xhtml.status == 200)
+						{
+							var response = xhtml.responseText;
+							if(response == "done")
+							{
+								message = "User Removed";
+								document.getElementById("message").innerHTML = message;
+								uname = document.getElementById("uname").value = "";
+							}
+							else
+							{
+								message = "User not removed";
+								document.getElementById("message").innerHTML = message;
+							}
+						}
+					}
+					xhtml.open("GET","../controller/remove_user_controller.php?uname="+uname,true);
+					xhtml.send();
+				}
+			}
 			function add_room()
 			{
 				var xhttp = new XMLHttpRequest();
@@ -190,6 +225,43 @@ function add_user()
 				}
 				xhttp.open("GET","add_room.php",true);
 				xhttp.send();
+			}
+			function addRoom()
+			{
+				var rn = document.getElementById("rn").value;
+				var err_rn = "";
+				var msg = "";
+				var rtype = document.getElementById("rtype").value;
+				if(rn == "")
+				{
+					err_rn = "Enter Room Number";
+					document.getElementById("err_rn").innerHTML = err_rn;
+				}
+				else
+				{
+					var xhtml = new XMLHttpRequest();
+					xhtml.onreadystatechange = function()
+					{
+						if(xhtml.readyState == 4 && xhtml.status == 200)
+						{
+							var response = xhtml.responseText;
+							if(response == "done")
+							{
+								msg = "Room Added";
+								document.getElementById("msg").innerHTML = msg;
+								rn = document.getElementById("rn").value = "";
+								document.getElementById("err_rn").innerHTML = "";
+							}
+							else
+							{
+								msg = "Error Occured";
+								document.getElementById("msg").innerHTML = msg;
+							}
+						}
+					}
+					xhtml.open("GET","../controller/add_room_controller.php?rn="+rn+"&rt="+rtype,true);
+					xhtml.send();
+				}
 			}
 			function remove_room()
 			{

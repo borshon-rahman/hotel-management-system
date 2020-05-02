@@ -4,13 +4,7 @@
 	{
 		header("Location:login.php");
 	}
-	/*if(isset($_POST['logout']))
-	{
-		session_destroy();
-		header("Location:login.php");
-	}*/
 ?>
-
 <html>
 	<title></title>
 	<head>
@@ -87,8 +81,7 @@
 				</tr>
 				<tr>
 					<td><b>Status: </b></td>
-					<td><input id="status" type="text" name="status" value=""><br>
-						<font id="err_status" size="2" style="color: red"></font></td>
+					<td><select id="status" name="status"><option>stuff</option><option>manager</option><option>admin</option></select></td>
 				</tr>
 				<tr>
 					<td><b>Password </b></td>

@@ -1,4 +1,4 @@
-function room_reserve()
+			function room_reserve()
 			{
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function()

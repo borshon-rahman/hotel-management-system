@@ -36,7 +36,6 @@ function add_user()
 				var uname = document.getElementById("uname").value;
 				var err_uname = "";
 				var status = document.getElementById("status").value;
-				var err_status = "";
 				var pass = document.getElementById("pass").value;
 				var err_pass = "";
 				var cpass = document.getElementById("cpass").value;
@@ -97,11 +96,6 @@ function add_user()
 					err_uname = "Username Required";
 					document.getElementById("err_uname").innerHTML = err_uname;
 				}
-				if(status == "")
-				{
-					err_status = "Status Required";
-					document.getElementById("err_status").innerHTML = err_status;
-				}
 				if(pass == "")
 				{
 					err_pass = "Password Required";
@@ -131,13 +125,39 @@ function add_user()
 									phone = document.getElementById("phone").value = "";
 									email = document.getElementById("email").value = "";
 									uname = document.getElementById("uname").value = "";
-									status = document.getElementById("status").value = "";
 									pass = document.getElementById("pass").value = "";
 									cpass = document.getElementById("cpass").value = "";
+
+									document.getElementById("err_fname").innerHTML = "";
+									document.getElementById("err_lname").innerHTML = "";
+									document.getElementById("err_gender").innerHTML = "";
+									document.getElementById("err_p_address").innerHTML = "";
+									document.getElementById("err_pre_address").innerHTML = "";
+									document.getElementById("err_city").innerHTML = "";
+									document.getElementById("err_zip").innerHTML = "";
+									document.getElementById("err_country").innerHTML = "";
+									document.getElementById("err_phone").innerHTML = "";
+									document.getElementById("err_email").innerHTML = "";
+									document.getElementById("err_uname").innerHTML = "";
+									document.getElementById("err_pass").innerHTML = "";
 								}
 								else
 								{
-									document.getElementById("msg").innerHTML = "Room not Removed!";
+									document.getElementById("msg").innerHTML = "Error Occured";
+
+									document.getElementById("err_fname").innerHTML = "";
+									document.getElementById("err_lname").innerHTML = "";
+									document.getElementById("err_gender").innerHTML = "";
+									document.getElementById("err_p_address").innerHTML = "";
+									document.getElementById("err_pre_address").innerHTML = "";
+									document.getElementById("err_city").innerHTML = "";
+									document.getElementById("err_zip").innerHTML = "";
+									document.getElementById("err_country").innerHTML = "";
+									document.getElementById("err_phone").innerHTML = "";
+									document.getElementById("err_email").innerHTML = "";
+									document.getElementById("err_uname").innerHTML = "";
+									document.getElementById("err_status").innerHTML = "";
+									document.getElementById("err_pass").innerHTML = "";
 								}
 							}
 						}
@@ -150,20 +170,6 @@ function add_user()
 						document.getElementById("err_cpass").innerHTML = err_cpass;
 					}
 				}
-				err_fname = "";
-				err_lname = "";
-				err_gender = "";
-				err_p_address = "";
-				err_pre_address = "";
-				err_city = "";
-				err_zip = "";
-				err_country = "";
-				err_phone = "";
-				err_email = "";
-				err_uname = "";
-				err_status = "";
-				err_pass = "";
-				err_cpass = "";
 			}
 			function remove_user()
 			{
@@ -201,6 +207,7 @@ function add_user()
 								message = "User Removed";
 								document.getElementById("message").innerHTML = message;
 								uname = document.getElementById("uname").value = "";
+								document.getElementById("err_uname").innerHTML = "";
 							}
 							else
 							{
@@ -296,6 +303,7 @@ function add_user()
 							if(response > 0)
 							{
 								document.getElementById("msg").innerHTML = "Room Removed!";
+								room_number = document.getElementById("rn").value = "";
 							}
 							else
 							{

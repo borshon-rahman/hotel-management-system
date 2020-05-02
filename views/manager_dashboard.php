@@ -33,9 +33,8 @@
 				</a>
 			</span>
 			<div style="text-align: center;">
-				<font size="8" style="color: white;">Manager Panel</font>
-				<div style="text-align: right;">
-					<a href="../controller/logout.php" style="text-decoration: none;"><font style="color: gray;"><b>Logout</b></font></a>
+				<a href="manager_dashboard.php" style="text-decoration: none;"><font size="8" style="color: white;">Manager Dashboard</font></a>
+				<div> &nbsp <a href="../index.php" style="text-align: left;"><font style="color: rgb(236,190,20);">Home</font></a> &nbsp <a href="../controller/logout.php" style="text-decoration: none; text-align: right;"><font style="color: rgb(236,190,20);"><b>Logout</b></font></a> 
 				</div>
 			</div>
 		</div>

@@ -10,7 +10,7 @@
 	<head></head>
 	<body>
 		<?php
-			require "../models/db_connect.php";
+			/*require "../models/db_connect.php";
 			$fname = "";
 			$err_fname = "";
 			$lname = "";
@@ -107,12 +107,11 @@
 					$checkout_year = "";
 					$msg = "Reservation Succesfull!";
 				}	
-			}
+			}*/
 		?>
-		<hr>
 		<center>
 			<form method="post" action="" style="background-color: gray; background-image: url(../storage/images/image.png);">
-				<span><font size="4" style="color: yellow;"><?php echo "$msg"; ?></font></span>
+				<span><font size="4" style="color: yellow;"></font></span>
 				<table>
 					<tr>
 						<td><span style="color: rgb(11,13,71);"><font size="5"><b>PERSONAL INFORMATION</b></font><br><hr></span></td>
@@ -120,26 +119,26 @@
 					<tr>
 						<td>
 							<font>First Name </font><font style="color: red">*</font><br>
-							<input type="text" name="fname" value="<?php echo $fname; ?>"> <font size="2" style="color: red"><?php echo "$err_fname"; ?></font>
+							<input type="text" name="fname" value=""> <font size="2" style="color: red"></font>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<font>Last Name </font><font style="color: red">*</font><br>
-							<input type="text" name="lname" value="<?php echo $lname; ?>"> <font size="2" style="color: red"><?php echo "$err_lname"; ?></font>
+							<input type="text" name="lname" value=""> <font size="2" style="color: red"></font>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<font>Email </font><font style="color: red">*</font><br>
-							<input type="text" name="email" value="<?php echo $email; ?>"> <font size="2" style="color: red"><?php echo "$err_email"; ?></font>
+							<input type="text" name="email" value=""> <font size="2" style="color: red"></font>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<font>Country </font><font style="color: red">*</font><br>
 							<select name="country">
-								<option value="<?php echo $country; ?>">Bangladesh</option>
+								<option value="">Bangladesh</option>
 								<option>India</option>
 								<option>China</option>
 								<option>America</option>
@@ -150,7 +149,7 @@
 					<tr>
 						<td>
 							<font>Phone Number </font><font style="color: red">*</font><br>
-							<input type="text" name="phone"> <font size="2" style="color: red"><?php echo "$err_phone" ?></font>
+							<input type="text" name="phone"> <font size="2" style="color: red"></font>
 						</td>
 					</tr>
 					<tr>
@@ -193,7 +192,7 @@
 					</tr>
 					<tr>
 						<td><font>Number of Room </font><font style="color: red">*</font><br>
-							<input type="Number" name="room_count"> <font size="2" style="color: red"><?php echo "$err_room_count"; ?></font>
+							<input type="Number" name="room_count"> <font size="2" style="color: red"></font>
 						</td>
 					</tr>
 					<tr>
@@ -273,6 +272,5 @@
 				<br><input type="submit" name="submit" value="Submit">
 			</form>
 		</center>
-		
 	</body>
 </html>

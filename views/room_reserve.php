@@ -7,111 +7,15 @@
 ?>
 <html>
 	<title>Room Reservation</title>
-	<head></head>
+	<head>
+		<script>
+			
+		</script>
+	</head>
 	<body>
-		<?php
-			/*require "../models/db_connect.php";
-			$fname = "";
-			$err_fname = "";
-			$lname = "";
-			$err_lname = "";
-			$email = "";
-			$err_email ="";
-			$phone = "";
-			$err_phone = "";
-			$country = "";
-			$room_type = "";
-			$available_room = "";
-			$bedding_type = "";
-			$room_count = "";
-			$err_room_count = "";
-			$meal_plan = "";
-			$checkin_date = "";
-			$checkin_month = "";
-			$checkin_year = "";
-			$checkout_date = "";
-			$checkout_month = "";
-			$checkout_year = "";
-			$msg = "";
-
-			if(isset($_POST['submit']))
-			{
-				if(empty($_POST['fname']))
-				{
-					$err_fname = "First Name Required";
-				}
-				else
-				{
-					$fname = htmlspecialchars($_POST['fname']);
-				}
-				if(empty($_POST['lname']))
-				{
-					$err_lname = "Last Name Required";
-				}
-				else
-				{
-					$lname = htmlspecialchars($_POST['lname']);
-				}
-				if(empty($_POST['room_count']))
-				{
-					$err_room_count = "Enter number of room";
-				}
-				else
-				{
-					$room_count = $_POST['room_count'];
-				}
-				if(empty($_POST['phone']))
-				{
-					$err_phone = "Phone Number Required";
-				}
-				else
-				{
-					$phone = htmlspecialchars($_POST['phone']);
-				}
-				if(empty($_POST['email']))
-				{
-					$err_email = "Email is required";
-				}
-				else
-				{
-					$email = htmlspecialchars($_POST['email']);
-					$country = $_POST['country'];
-					$room_type = $_POST['room_type'];
-					$available_room = $_POST['available_room'];
-					$bedding_type = $_POST['bedding_type'];
-					$meal_plan = $_POST['meal_plan'];
-					$checkin_date = $_POST['checkin_date'];
-					$checkin_month = $_POST['checkin_month'];
-					$checkin_year = $_POST['checkin_year'];
-					$checkout_date = $_POST['checkout_date'];
-					$checkout_month = $_POST['checkout_month'];
-					$checkout_year = $_POST['checkout_year'];
-
-					$query = "INSERT INTO reserved_room VALUES ('$available_room', '$room_type', '$fname', '$lname', '$email', '$country', '$phone', '$bedding_type', '$room_count', '$meal_plan', '$checkin_date', '$checkin_month', '$checkin_year', '$checkout_date', '$checkout_month', '$checkout_year')";
-					execute($query);
-					$fname = "";
-					$lname = "";
-					$email = "";
-					$phone = "";
-					$country = "";
-					$room_type = "";
-					$available_room = "";
-					$bedding_type = "";
-					$room_count = "";
-					$meal_plan = "";
-					$checkin_date = "";
-					$checkin_month = "";
-					$checkin_year = "";
-					$checkout_date = "";
-					$checkout_month = "";
-					$checkout_year = "";
-					$msg = "Reservation Succesfull!";
-				}	
-			}*/
-		?>
 		<center>
-			<form method="post" action="" style="background-color: gray; background-image: url(../storage/images/image.png);">
-				<span><font size="4" style="color: yellow;"></font></span>
+			<div style="background-color: gray; background-image: url(../storage/images/image.png);">
+				<span><font id="msg" size="4" style="color: yellow;"></font></span>
 				<table>
 					<tr>
 						<td><span style="color: rgb(11,13,71);"><font size="5"><b>PERSONAL INFORMATION</b></font><br><hr></span></td>
@@ -119,25 +23,25 @@
 					<tr>
 						<td>
 							<font>First Name </font><font style="color: red">*</font><br>
-							<input type="text" name="fname" value=""> <font size="2" style="color: red"></font>
+							<input id="fname" type="text" name="fname" value=""> <font id="err_fname" size="2" style="color: red"></font>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<font>Last Name </font><font style="color: red">*</font><br>
-							<input type="text" name="lname" value=""> <font size="2" style="color: red"></font>
+							<input id="lname" type="text" name="lname" value=""> <font id="err_lname" size="2" style="color: red"></font>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<font>Email </font><font style="color: red">*</font><br>
-							<input type="text" name="email" value=""> <font size="2" style="color: red"></font>
+							<input id="email" type="text" name="email" value=""> <font id="err_email" size="2" style="color: red"></font>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<font>Country </font><font style="color: red">*</font><br>
-							<select name="country">
+							<select id="country" name="country">
 								<option value="">Bangladesh</option>
 								<option>India</option>
 								<option>China</option>
@@ -149,7 +53,7 @@
 					<tr>
 						<td>
 							<font>Phone Number </font><font style="color: red">*</font><br>
-							<input type="text" name="phone"> <font size="2" style="color: red"></font>
+							<input id="phone" type="text" name="phone"> <font id="err_phone" size="2" style="color: red"></font>
 						</td>
 					</tr>
 					<tr>
@@ -161,7 +65,7 @@
 					<tr>
 						<td>
 							<font>Type of Room </font><font style="color: red">*</font><br>
-							<select name="room_type">
+							<select id="room_type" name="room_type">
 								<option>Superior Room</option>
 								<option>Delux Room</option>
 								<option>Guest House</option>
@@ -172,17 +76,27 @@
 					<tr>
 						<td>
 							<font>Available Room</font><font style="color: red">*</font><br>
-							<font>Room Number </font><select name="available_room">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
+							<font>Room Number </font>
+							<?php
+							require "../models/db_connect.php";
+							$query = "SELECT room_number FROM room WHERE status='available'";
+							$results = get($query);
+							$count = mysqli_num_rows($results);
+							?>
+							<select id="room_number" name="room_number">
+							<?php 
+							foreach($results as $result)
+							{
+								echo "<option>".$result["room_number"][$i]."</option>";
+							}
+							?>
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<font>Bedding Type </font><br>
-							<select name="bedding_type">
+							<select id="bedding_type" name="bedding_type">
 								<option>Single</option>
 								<option>Double</option>
 								<option>Triple</option>
@@ -190,15 +104,11 @@
 							</select><br>
 						</td>
 					</tr>
-					<tr>
-						<td><font>Number of Room </font><font style="color: red">*</font><br>
-							<input type="Number" name="room_count"> <font size="2" style="color: red"></font>
-						</td>
-					</tr>
+					
 					<tr>
 						<td>
 							<font>Meal Plan</font><br>
-							<select name="meal_plan">
+							<select id="meal_plan" name="meal_plan">
 								<option>Room Only</option>
 								<option>Breakfast</option>
 								<option>Half Board</option>
@@ -209,7 +119,7 @@
 					<tr>
 						<td>
 							<font>Check in </font><br>
-							<font>Date </font><select name="checkin_date">
+							<font>Date </font><select id="checkin_date" name="checkin_date">
 								<?php 
 									for($i=1;$i<=31;$i++)
 										{
@@ -218,7 +128,7 @@
 								?>
 								
 							</select> 
-							<font>Month </font><select name="checkin_month">
+							<font>Month </font><select id="checkin_month" name="checkin_month">
 								<?php $months = array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"); 
 									$months_length = count($months);
 									for($i=0;$i<=$months_length;$i++)
@@ -227,7 +137,7 @@
 									}
 								?>
 							</select> 
-							<font>Year </font><select name="checkin_year">
+							<font>Year </font><select id="checkin_year" name="checkin_year">
 								<?php for($i=2015;$i<=2050;$i++)
 								{
 									echo "<option>$i</option>";
@@ -240,7 +150,7 @@
 					<tr>
 						<td>
 							<font>Check out </font><br>
-							<font>Date </font><select name="checkout_date">
+							<font>Date </font><select id="checkout_date" name="checkout_date">
 								<?php 
 									for($i=1;$i<=31;$i++)
 										{
@@ -249,7 +159,7 @@
 								?>
 								
 							</select> 
-							<font>Month </font><select name="checkout_month">
+							<font>Month </font><select id="checkout_month" name="checkout_month">
 								<?php $months = array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"); 
 									$months_length = count($months);
 									for($i=0;$i<=$months_length;$i++)
@@ -258,7 +168,7 @@
 									}
 								?>
 							</select> 
-							<font>Year </font><select name="checkout_year">
+							<font>Year </font><select id="checkout_year" name="checkout_year">
 								<?php for($i=2015;$i<=2050;$i++)
 								{
 									echo "<option>$i</option>";
@@ -269,8 +179,9 @@
 						</td>
 					</tr>
 				</table>
-				<br><input type="submit" name="submit" value="Submit">
-			</form>
+				<br>
+				<button onclick="roomReserve()">Submit</button>
+			</div>
 		</center>
 	</body>
 </html>

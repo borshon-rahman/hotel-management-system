@@ -49,7 +49,8 @@
 				</a>
 			</span>
 			<div style="text-align: center;">
-				<font size="8" style="color: white;">Registration</font>
+				<font size="8" style="color: white;">Registration</font><br>
+				<a href="../index.php" style="text-align: left;"><font style="color: rgb(236,190,20);">Home</font></a> &nbsp <a href="login.php" style="text-decoration: none; text-align: right;"><font style="color: rgb(236,190,20);"><b>Login</b></font></a>
 			</div>
 		</form>
 		<hr>

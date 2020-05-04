@@ -13,7 +13,7 @@
 	<head>	
 		<script src="scripts/client_dashboard_scripts.js"></script>
 	</head>
-	<body>
+	<body style="background-color: rgb(179, 179, 255);">
 		<div style="background-color: rgb(11, 13, 71);">
 		<table>
 			<tr>
@@ -30,8 +30,8 @@
 		</div>
 		<div>
 			<font size="10" style="text-align: center;">Profile</font>
-			<div style="background-color: rgb(255,153,51); height: 250px; text-align: center;">
-				<font size="8"><?php foreach($information as $info) {echo $info["user_name"];} ?></font>
+			<div style="background-color: rgb(236,190,20); height: 250px; text-align: center;">
+				<a href="client_dashboard.php" style="text-decoration: none; color: black;"><font size="8"><?php foreach($information as $info) {echo $info["user_name"];} ?></font></a>
 				<table align="center" border="4" style="width: 1400px; height: 150px; border-collapse: collapse;">
 					<tr>
 						<th><font size="5">First Name</font></th>
@@ -82,7 +82,7 @@
 					?>
 				</table>
 			</div>
-		</div>
+		</div><br>
 		<div id="content">
 			
 		</div>

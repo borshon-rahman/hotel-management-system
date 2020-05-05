@@ -417,3 +417,18 @@ function add_user()
 				xhttp.open("GET","reserved_room.php",true);
 				xhttp.send();
 			}
+			function cancel(rn)
+			{
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function()
+				{
+					if(xhttp.readyState == 4 && xhttp.status == 200)
+					{
+						response = xhttp.responseText;
+						alert(response);
+						//document.getElementById("content").innerHTML = 
+					}
+				}
+				xhttp.open("GET","reservation_cancel_controller.php?room_number="+rn,true);
+				xhttp.send();
+			}

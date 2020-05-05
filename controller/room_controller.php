@@ -8,7 +8,7 @@
 	}
 	function reserved_room()
 	{
-		$query = "SELECT * FROM room WHERE status='reserved'";
+		$query = "SELECT * FROM reserved_room";
 		$result = get($query);
 		return $result;
 	}

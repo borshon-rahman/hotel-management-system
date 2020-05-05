@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2020 at 06:08 PM
+-- Generation Time: May 05, 2020 at 11:22 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -69,6 +69,14 @@ CREATE TABLE `reserved_room` (
   `checkout_year` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `reserved_room`
+--
+
+INSERT INTO `reserved_room` (`room_number`, `room_type`, `fname`, `lname`, `email`, `country`, `phone`, `bedding_type`, `meal_plan`, `checkin_date`, `checkin_month`, `checkin_year`, `checkout_date`, `checkout_month`, `checkout_year`) VALUES
+(1, 'Superior Room', 'kfhsdlfhdslk', 'lksflkfsnglk', 'lfslgh', 'Bangladesh', 'dgndflkgnrdoi', 'Single', 'Room Only', 1, 'Jan', 2015, 1, 'Jan', 2015),
+(2, 'Superior Room', 'dsgsgfs', 'chgfchgf', 'hvfjfvjh', 'Bangladesh', 'uyr76rrtrty', 'Single', 'Room Only', 1, 'Jan', 2015, 1, 'Jan', 2015);
+
 -- --------------------------------------------------------
 
 --
@@ -86,8 +94,8 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`room_number`, `type`, `status`) VALUES
-(1, 'Deluxe', 'available'),
-(2, 'Deluxe', 'available'),
+(1, 'Deluxe', 'reserved'),
+(2, 'Deluxe', 'reserved'),
 (3, 'Deluxe', 'available'),
 (4, 'Deluxe', 'available'),
 (5, 'Luxury', 'available'),
@@ -162,7 +170,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

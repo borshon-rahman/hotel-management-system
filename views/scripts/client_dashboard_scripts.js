@@ -24,6 +24,7 @@
 				var err_country = "";
 				var phone = document.getElementById("phone").value;
 				var err_phone = "";
+				var msg = "";
 				var room_type = document.getElementById("room_type").value;
 				var room_number = document.getElementById("room_number").value;
 				var bedding_type = document.getElementById("bedding_type").value;
@@ -31,7 +32,7 @@
 				var checkin_date = document.getElementById("checkin_date").value;
 				var checkin_month = document.getElementById("checkin_month").value;
 				var checkin_year = document.getElementById("checkin_year").value;
-				var checkout_date = document.getElementById("checkout_date")value;
+				var checkout_date = document.getElementById("checkout_date").value;
 				var checkout_month = document.getElementById("checkout_month").value;
 				var checkout_year = document.getElementById("checkout_year").value;
 
@@ -43,7 +44,7 @@
 				if(lname == "")
 				{
 					err_lname = "Last Name Required";
-					document.getElementById("lname").innerHTML = err_lname;
+					document.getElementById("err_lname").innerHTML = err_lname;
 				}
 				if(email == "")
 				{
@@ -53,7 +54,7 @@
 				if(phone == "")
 				{
 					err_phone = "Phone Number Required";
-					document.getElementById("phone").innerHTML = err_phone;
+					document.getElementById("err_phone").innerHTML = err_phone;
 				}
 				else
 				{
@@ -70,7 +71,7 @@
 							}
 						}
 					}
-					xhtml.open("GET","../controller/room_reserve_controller.php?fname="+fname+"&lname="+lname+"&country="+country+"&phone="+phone+"&email="+email+"&room_type="+room_type+"&room_number="+room_number+"&bedding_type="+bedding_type+"&meal_plan="+meal_plan+"&cid="+checkin_date+"&cim="+checkin_month+"&ciy="+checkin_year+"&cod="+checkout_date+"$com="+checkout_month+"&coy="+checkout_year,true);
-					xhtml.send();
+					xhttp.open("GET","../controller/room_reserve_controller.php?fname="+fname+"&lname="+lname+"&email="+email+"&country="+country+"&phone="+phone+"&room_type="+room_type+"&room_number="+room_number+"&bedding_type="+bedding_type+"&meal_plan="+meal_plan+"&checkin_date="+checkin_date+"&checkin_month="+checkin_month+"&checkin_year="+checkin_year+"&checkout_date="+checkout_date+"&checkout_month="+checkout_month+"&checkout_year="+checkout_year,true);
+					xhttp.send();
 				}
 			}

@@ -25,12 +25,12 @@
 			$room_number = $_GET['room_number'];
 			$bedding_type = $_GET['bedding_type'];
 			$meal_plan = $_GET['meal_plan'];
-			$cid = $_GET['cid'];
-			$cim = $_GET['cim'];
-			$ciy = $_GET['ciy'];
-			$cod = $_GET['cod'];
-			$com = $_GET['com'];
-			$coy = $_GET['coy'];
+			$checkin_date = $_GET['checkin_date'];
+			$checkin_month = $_GET['checkin_month'];
+			$checkin_year = $_GET['checkin_year'];
+			$checkout_date = $_GET['checkout_date'];
+			$checkout_month = $_GET['checkout_month'];
+			$checkout_year = $_GET['checkout_year'];
 			
 			
 			$fname = htmlspecialchars($fname);
@@ -38,11 +38,10 @@
 			$email = htmlspecialchars($email);
 			$phone = htmlspecialchars($phone);
 			$country = htmlspecialchars($country);
-			$uname = htmlspecialchars($uname);
 
-			$query1 = "INSERT INTO reserved_room VALUES ('$room_number','$room_type','$fname','$lname','$email','$country','$phone','$bedding_type','$meal_plan','$cid','$cim','$ciy','$cod','$com',$coy)";
+			$query1 = "INSERT INTO reserved_room VALUES ('$room_number','$room_type','$fname','$lname','$email','$country','$phone','$bedding_type','$meal_plan','$checkin_date','$checkin_month','$checkin_year','$checkout_date','$checkout_month',$checkout_year)";
 			execute($query1);
-			$query2 = "UPDATE room SET status='availablee' WHERE room_number= '2'";
+			$query2 = "UPDATE room SET status='reserved' WHERE room_number= '$room_number'";
 			execute($query2);
 			echo "done";
 ?>

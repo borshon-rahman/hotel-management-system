@@ -42,7 +42,7 @@
 						<td>
 							<font>Country </font><font style="color: red">*</font><br>
 							<select id="country" name="country">
-								<option value="">Bangladesh</option>
+								<option>Bangladesh</option>
 								<option>India</option>
 								<option>China</option>
 								<option>America</option>
@@ -75,8 +75,7 @@
 					</tr>
 					<tr>
 						<td>
-							<font>Available Room</font><font style="color: red">*</font><br>
-							<font>Room Number </font>
+							<font>Available Room Number </font>
 							<?php
 							require "../models/db_connect.php";
 							$query = "SELECT room_number FROM room WHERE status='available'";

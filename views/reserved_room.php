@@ -7,6 +7,7 @@
 		$reservations = reserved_room();
 		?>
 		<div>
+			<h3 id="msg" style="color: red; text-align: center;"></h3>
 			<h2 style="text-align: center;">Reserved Room</h2>
 			<table align="center" border="1" style="border-collapse: collapse; text-align: center;">
 				<tr>
@@ -22,6 +23,7 @@
 					<th></th>
 					<th colspan="3">Checkout Date</th>
 					<th></th>
+					<a href=""></a>
 					
 				</tr>
 				<?php
@@ -46,7 +48,7 @@
 						echo "<td>".$reservation["checkout_month"]."</td>";
 						echo "<td>".$reservation["checkout_year"]."</td>";
 						$rn = $reservation["room_number"];
-						echo '<td>'.'<button style="background-color: blue; font-weight: bold;" onclick="cancel(<?php echo $rn; ?>)">Cancel</button>'.'</td>';
+						echo '<td>'.'<a href="javascript:;" onclick="cancel('.$rn.')" style="text-decoration: none;"><font style="background-color: blue; color: black; font-weight: bold;">Cancel</font></a>'.'</td>';
 						echo "</tr>";
 					}
 				?>

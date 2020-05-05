@@ -419,16 +419,26 @@ function add_user()
 			}
 			function cancel(rn)
 			{
+				var msg = "";
+				room_number = rn;
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function()
 				{
 					if(xhttp.readyState == 4 && xhttp.status == 200)
 					{
 						response = xhttp.responseText;
-						alert(response);
-						//document.getElementById("content").innerHTML = 
+						if(response == "done")
+						{
+							msg = "Reservation Canceled";
+							document.getElementById("msg").innerHTML = msg;
+						}
+						else
+						{
+							msg = "Error Occurred";
+							document.getElementById("msg").innerHTML = msg;
+						}
 					}
 				}
-				xhttp.open("GET","reservation_cancel_controller.php?room_number="+rn,true);
+				xhttp.open("GET","../controller/reservation_cancel_controller.php?room_number="+room_number,true);
 				xhttp.send();
 			}

@@ -322,3 +322,28 @@ function reserved_room()
 	xhttp.open("GET","reserved_room.php",true);
 	xhttp.send();
 }
+			function cancel(rn)
+			{
+				var msg = "";
+				room_number = rn;
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function()
+				{
+					if(xhttp.readyState == 4 && xhttp.status == 200)
+					{
+						response = xhttp.responseText;
+						if(response == "done")
+						{
+							msg = "Reservation Canceled";
+							document.getElementById("msg").innerHTML = msg;
+						}
+						else
+						{
+							msg = "Error Occurred";
+							document.getElementById("msg").innerHTML = msg;
+						}
+					}
+				}
+				xhttp.open("GET","../controller/reservation_cancel_controller.php?room_number="+room_number,true);
+				xhttp.send();
+			}

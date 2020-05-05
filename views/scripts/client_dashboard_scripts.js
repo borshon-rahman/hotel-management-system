@@ -68,10 +68,25 @@
 							{
 								msg = "Room has been Reserved!";
 								document.getElementById("msg").innerHTML = msg;
+
+								fname = document.getElementById("fname").value = "";
+								document.getElementById("err_fname").innerHTML = "";
+								lname = document.getElementById("lname").value = "";
+								document.getElementById("err_lname").innerHTML = "";
+								email = document.getElementById("email").value = "";
+								document.getElementById("err_email").innerHTML = "";
+								phone = document.getElementById("phone").value = "";
+								document.getElementById("err_phone").innerHTML = "";
+							}
+							else
+							{
+								msg = "Error Occurred";
+								document.getElementById("msg").innerHTML = msg;
 							}
 						}
 					}
 					xhttp.open("GET","../controller/room_reserve_controller.php?fname="+fname+"&lname="+lname+"&email="+email+"&country="+country+"&phone="+phone+"&room_type="+room_type+"&room_number="+room_number+"&bedding_type="+bedding_type+"&meal_plan="+meal_plan+"&checkin_date="+checkin_date+"&checkin_month="+checkin_month+"&checkin_year="+checkin_year+"&checkout_date="+checkout_date+"&checkout_month="+checkout_month+"&checkout_year="+checkout_year,true);
 					xhttp.send();
 				}
+
 			}

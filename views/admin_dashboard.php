@@ -43,7 +43,8 @@
 			<div id="navigation">
 				<font size="6" style="color: white;">Manage User</font><br>
 				<a href="javascript:;" onclick="add_user()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Add user</font></a><br>
-				<a href="javascript:;" onclick="remove_user()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Remove user</font></a><br><br>
+				<a href="javascript:;" onclick="remove_user()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Remove user</font></a><br>
+				<a href="javascript:;" onclick="all_user()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Users</font></a><br>
 				<font size="6" style="color: white;">Manage Rooms</font><br>
 				<a href="javascript:;" onclick="add_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Add Room</font></a><br>
 				<a href="javascript:;" onclick="remove_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Rooms</font></a><br>

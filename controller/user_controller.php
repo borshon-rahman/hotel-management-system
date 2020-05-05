@@ -6,4 +6,10 @@
 		$result = get($query);
 		return $result;
 	}
+	function users()
+	{
+		$query = "SELECT * FROM users";
+		$result = get($query);
+		return $result;
+	}
 ?>

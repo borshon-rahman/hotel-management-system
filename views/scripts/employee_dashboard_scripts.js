@@ -67,6 +67,15 @@
 							{
 								msg = "Room has been Reserved!";
 								document.getElementById("msg").innerHTML = msg;
+
+								fname = document.getElementById("fname").value = "";
+								document.getElementById("err_fname").innerHTML = "";
+								lname = document.getElementById("lname").value = "";
+								document.getElementById("err_lname").innerHTML = "";
+								email = document.getElementById("email").value = "";
+								document.getElementById("err_email").innerHTML = "";
+								phone = document.getElementById("phone").value = "";
+								document.getElementById("err_phone").innerHTML = "";
 							}
 						}
 					}

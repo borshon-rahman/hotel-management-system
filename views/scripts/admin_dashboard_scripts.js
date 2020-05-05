@@ -1,4 +1,4 @@
-function add_user()
+			function add_user()
 			{
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function()
@@ -220,6 +220,45 @@ function add_user()
 					xhtml.send();
 				}
 			}
+			function all_user_remove_button(uname)
+			{
+				alert("hello");
+				var msg = "";
+				var user_name = uname;
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function()
+				{
+					if(xhttp.readyState == 4 && xhttp.status == 200)
+					{
+						response = xhttp.responseText;
+						if(response == "done")
+						{
+							msg = "User Removed";
+							document.getElementById("msg").innerHTML = msg;
+						}
+						else
+						{
+							msg = "Error Occurred";
+							document.getElementById("msg").innerHTML = msg;
+						}
+					}
+				}
+				xhttp.open("GET","../controller/remove_user_controller.php?uname="+user_name,true);
+				xhttp.send();
+			}
+			function all_user()
+			{
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function()
+				{
+					if(xhttp.readyState == 4 && xhttp.status == 200)
+					{
+						document.getElementById("content").innerHTML = xhttp.responseText;
+					}
+				}
+				xhttp.open("GET","all_user.php",true);
+				xhttp.send();
+			}
 			function add_room()
 			{
 				var xhttp = new XMLHttpRequest();
@@ -384,6 +423,15 @@ function add_user()
 							{
 								msg = "Room has been Reserved!";
 								document.getElementById("msg").innerHTML = msg;
+								
+								fname = document.getElementById("fname").value = "";
+								document.getElementById("err_fname").innerHTML = "";
+								lname = document.getElementById("lname").value = "";
+								document.getElementById("err_lname").innerHTML = "";
+								email = document.getElementById("email").value = "";
+								document.getElementById("err_email").innerHTML = "";
+								phone = document.getElementById("phone").value = "";
+								document.getElementById("err_phone").innerHTML = "";
 							}
 						}
 					}

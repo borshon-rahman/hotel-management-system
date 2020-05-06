@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2020 at 12:19 PM
+-- Generation Time: May 06, 2020 at 01:02 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -42,7 +42,6 @@ INSERT INTO `login` (`user_name`, `password`, `status`) VALUES
 ('admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
 ('borshon', 'fa246d0262c3925617b0c72bb20eeb1d', 'client'),
 ('client', '62608e08adc29a8d6dbc9754e659f125', 'client'),
-('karim', 'fa7f08233358e9b466effa1328168527', 'stuff'),
 ('manager', '1d0258c2440a8d19e716292b231e3190', 'manager'),
 ('rafi', 'eb9279982226a42afdf2860dbdc29b45', 'stuff'),
 ('stuff', 'c13d88cb4cb02003daedb8a84e5d272a', 'stuff');
@@ -76,6 +75,7 @@ CREATE TABLE `reserved_room` (
 --
 
 INSERT INTO `reserved_room` (`room_number`, `room_type`, `fname`, `lname`, `email`, `country`, `phone`, `bedding_type`, `meal_plan`, `checkin_date`, `checkin_month`, `checkin_year`, `checkout_date`, `checkout_month`, `checkout_year`) VALUES
+(1, 'Superior Room', 'makhon', 'lal', 'makhon@gmail.com', 'Bangladesh', '090878797', 'Single', 'Room Only', 1, 'Jan', 2015, 1, 'Jan', 2015),
 (2, 'Superior Room', 'jhgjhghjg', 'hvhjvkh', 'bkbk', 'Bangladesh', '541316511', 'Single', 'Room Only', 1, 'Jan', 2015, 1, 'Jan', 2015),
 (4, 'Superior Room', 'hgjgcghc', 'gvjhvkh', 'vbkvbkbvkj', 'Bangladesh', '28543164616', 'Single', 'Room Only', 1, 'Jan', 2015, 1, 'Jan', 2015),
 (6, 'Superior Room', 'hgfjg', 'bvkbkj', 'hjbkjbjk', 'Thiland', '9879870709', 'Single', 'Room Only', 1, 'Jan', 2015, 1, 'Jan', 2015),
@@ -98,13 +98,21 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`room_number`, `type`, `status`) VALUES
-(1, 'Deluxe', 'available'),
+(1, 'Deluxe', 'reserved'),
 (2, 'Deluxe', 'reserved'),
 (3, 'Deluxe', 'available'),
 (4, 'Deluxe', 'reserved'),
 (5, 'Luxury', 'available'),
 (6, 'Deluxe', 'reserved'),
-(7, 'Deluxe', 'reserved');
+(7, 'Deluxe', 'reserved'),
+(8, 'Luxury', 'available'),
+(9, 'Luxury', 'available'),
+(10, 'Luxury', 'available'),
+(11, 'Guest House', 'available'),
+(12, 'Guest House', 'available'),
+(13, 'Guest House', 'available'),
+(14, 'Guest House', 'available'),
+(15, 'Guest House', 'available');
 
 -- --------------------------------------------------------
 
@@ -136,8 +144,7 @@ INSERT INTO `users` (`SN`, `user_name`, `fname`, `lname`, `gender`, `permanent_a
 (2, 'admin', 'Richard', 'Parker', 'Male', '829 Van Dyke St.\r\nHoward Beach', '829 Van Dyke St.\r\nHoward Beach', 'NewYork', '11414', 'United State', '+80236-564-455', 'parker@gmail.com'),
 (3, 'manager', 'Sufat', 'Ullah', 'Male', '2 Ram Chandra Ray Chowdhury Rd', '2 Ram Chandra Ray Chowdhury Rd', 'Kushtia', '7000', 'Bangladesh', '1012134576789', 'zxcvb@aiub.edu'),
 (4, 'client', 'Mehzabien', 'Chowdhury', 'Female', 'House building, Uttara', 'House building, Uttara', 'Dhaka', '1208', 'Bangladesh', '+8801755555555', 'mehzabien@yahoo.com'),
-(5, 'rafi', 'gfdhfchf', 'cghcghc', 'Male', 'jhgjhg', 'cxvz', 'dsd', 'bmnv', 'bkbg', 'kgh', 'hrthhh'),
-(6, 'karim', 'dfsdffsd', 'aad', '', 'fsdfsdfsd', 'cxvz', 'dsd', ',nb.,mn;lj', 'bknb', '543216846132165', 'jhhj');
+(5, 'rafi', 'gfdhfchf', 'cghcghc', 'Male', 'jhgjhg', 'cxvz', 'dsd', 'bmnv', 'bkbg', 'kgh', 'hrthhh');
 
 --
 -- Indexes for dumped tables
@@ -176,7 +183,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

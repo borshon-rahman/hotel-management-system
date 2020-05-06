@@ -86,7 +86,7 @@
 							<?php 
 							foreach($results as $result)
 							{
-								echo "<option>".$result["room_number"][$i]."</option>";
+								echo "<option>".$result["room_number"]."</option>";
 							}
 							?>
 							</select>

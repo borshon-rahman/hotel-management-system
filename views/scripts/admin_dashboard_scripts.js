@@ -220,11 +220,12 @@
 					xhtml.send();
 				}
 			}
-			function all_user_remove_button(uname)
+
+			function all_user_remove_button(userName)
 			{
-				alert("hello");
+				var user_name = userName;
+				alert(user_name);
 				var msg = "";
-				var user_name = uname;
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function()
 				{
@@ -243,9 +244,10 @@
 						}
 					}
 				}
-				xhttp.open("GET","../controller/remove_user_controller.php?uname="+user_name,true);
+				xhttp.open("GET","../controller/remove_user_controller.php?user_name="+user_name,true);
 				xhttp.send();
 			}
+
 			function all_user()
 			{
 				var xhttp = new XMLHttpRequest();

@@ -1,6 +1,6 @@
 <?php
 	require "../models/db_connect.php";
-		$uname = $_GET['uname'];
+		$uname = $_GET['user_name'];
 
 		$query1 = "DELETE FROM login WHERE user_name='$uname'";
 		execute($query1);

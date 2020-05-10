@@ -211,7 +211,7 @@
 							}
 							else
 							{
-								message = "User not removed";
+								message = "User Not Found";
 								document.getElementById("message").innerHTML = message;
 							}
 						}

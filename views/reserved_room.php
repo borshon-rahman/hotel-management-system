@@ -23,7 +23,6 @@
 					<th></th>
 					<th colspan="3">Checkout Date</th>
 					<th></th>
-					<a href=""></a>
 					
 				</tr>
 				<?php

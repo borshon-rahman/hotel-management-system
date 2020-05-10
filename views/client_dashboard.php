@@ -80,7 +80,8 @@
 							echo "</tr>";
 						}
 					?>
-				</table>
+				</table><br>
+				<a href="client_profile_edit.php" style="text-decoration: none; color: black; border-style: groove; border-color: blue;"><span>Edit Profile</span></a>
 			</div>
 		</div><br>
 		<div id="content">

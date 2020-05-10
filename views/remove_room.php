@@ -26,7 +26,7 @@
 				<br>
 				<input type="button" name="remove" value="Remove" onclick="remove()">
 				<br><br>
-				<table align="center" border="1" style="border-collapse: collapse; text-align: center;">
+				<table width="500px" align="center" border="1" style="border-collapse: collapse; text-align: center;">
 				<tr>
 					<th>Room Number</th>
 					<th>Room Type</th>

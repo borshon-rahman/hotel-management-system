@@ -1,3 +1,11 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['loggedinuser']))
+	{
+		header("Location:login.php");
+	}
+?>
+
 <html>
 	<title></title>
 	<head></head>
@@ -7,6 +15,18 @@
 		$users = users();
 		?>
 		<div id="msg" style="color: blue; font-size: 4;"></div>
+		<div>
+			<center>
+				<span><font size="4" style="color: red"><b id="message"></b></font></span>
+				<table>
+					<tr>
+						<td><b>Username </b></td>
+						<td><input id="uname" type="text" name="uname"> &nbsp <font size="2" style="color: red"><b id="err_uname"></b></font></td>
+					</tr>
+				</table>
+				<button onclick="removeUser()">Discard</button>
+			</center>
+		</div>
 		<div style="background-color: gray;">
 			<h2 style="text-align: center;">All User</h2>
 			<table align="center" border="1" style="border-collapse: collapse; text-align: center;">
@@ -20,7 +40,6 @@
 					<th>Country</th>
 					<th>Phone</th>
 					<th>Email</th>
-					<th></th>
 				</tr>
 				<?php
 					$uname = "";
@@ -38,9 +57,6 @@
 						echo "<td>".$user["country"]."</td>";
 						echo "<td>".$user["phone"]."</td>";
 						echo "<td>".$user["email"]."</td>";
-						$uname = $user["user_name"];
-						//echo '<td>'.'<button onclick="all_user_remove_button($uname)">Remove</button'.'</td>';
-						echo '<td>'.'<a href="javascript:;" onclick="all_user_remove_button('.$uname.')" style="text-decoration: none;"><font style="background-color: blue; color: black; font-weight: bold;">Remove</font></a>'.'</td>';
 						echo "</tr>";
 					}
 				?>

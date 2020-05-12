@@ -14,16 +14,16 @@
 			function roomReserve()
 			{
 				var fname = document.getElementById("fname").value;
-				var err_fname = "";
+				var err_fname = document.getElementById("err_fname").innerHTML = "";
 				var lname = document.getElementById("lname").value;
-				var err_lname = "";
+				var err_lname = document.getElementById("err_lname").innerHTML = "";
 				var email = document.getElementById("email").value;
-				var err_email = "";
+				var err_email = document.getElementById("err_email").innerHTML = "";
 				var country = document.getElementById("country").value;
 				var err_country = "";
 				var phone = document.getElementById("phone").value;
-				var err_phone = "";
-				var msg = "";
+				var err_phone = document.getElementById("err_phone").innerHTML = "";
+				var msg = document.getElementById("msg").innerHTML = "";
 				var room_type = document.getElementById("room_type").value;
 				var room_number = document.getElementById("room_number").value;
 				var bedding_type = document.getElementById("bedding_type").value;
@@ -69,13 +69,9 @@
 								document.getElementById("msg").innerHTML = msg;
 
 								fname = document.getElementById("fname").value = "";
-								document.getElementById("err_fname").innerHTML = "";
 								lname = document.getElementById("lname").value = "";
-								document.getElementById("err_lname").innerHTML = "";
 								email = document.getElementById("email").value = "";
-								document.getElementById("err_email").innerHTML = "";
 								phone = document.getElementById("phone").value = "";
-								document.getElementById("err_phone").innerHTML = "";
 							}
 						}
 					}

@@ -29,7 +29,7 @@
 				</tr>
 				<tr>
 					<td><b><font size="2" style="color: red">*</font>Gender </b></td>
-					<td><input id="gender" type="radio" name="gender" value="Male"> Male <input id="gender" type="radio" name="gender" value="Female"> Female <br>
+					<td><input id="g1" type="radio" name="gender" value="Male" checked="checked"> Male <input id="g2" type="radio" name="gender" value="Female"> Female <br>
 						<font id="err_gender" size="2" style="color: red"></font></td>
 				</tr>
 				<tr>

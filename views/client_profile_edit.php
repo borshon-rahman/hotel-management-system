@@ -37,12 +37,13 @@
 			$err_email = "";
 			$msg = "";
 
-			$query = "SELECT fname,lname,permanent_adrs,present_adrs,city,zip_code,country,phone,email FROM users WHERE user_name='$uname'";
+			$query = "SELECT fname,lname,gender,permanent_adrs,present_adrs,city,zip_code,country,phone,email FROM users WHERE user_name='$uname'";
 			$results = get($query);
 			foreach($results as $result)
 			{
 				$fname = $result["fname"];
 				$lname = $result["lname"];
+				$gender = $result["gender"];
 				$p_address = $result["permanent_adrs"];
 				$pre_address = $result["present_adrs"];
 				$city = $result["city"];
@@ -51,7 +52,7 @@
 				$phone = $result["phone"];
 				$email = $result["email"];
 			}
-			
+
 			if(isset($_POST['save']))
 			{
 				$fname = htmlspecialchars($_POST['fname']);
@@ -111,7 +112,7 @@
 				</tr>
 				<tr>
 					<td><b>Gender </b></td>
-					<td><input id="gender" type="radio" name="gender" value="Male"> Male <input id="gender" type="radio" name="gender" value="Female"> Female <br>
+					<td>&nbsp <font style="font-weight: bold;"><?php echo $gender; ?></font><br><input id="gender" type="radio" name="gender" value="Male"> Male <input id="gender" type="radio" name="gender" value="Female"> Female <br>
 						<font id="err_gender" size="2" style="color: red"></font></td>
 				</tr>
 				<tr>
@@ -158,5 +159,6 @@
 		</center><br>
 		</form>
 	</div>
+	<?php header("client_profile_edit.php"); ?>
 	</body>
 </html>

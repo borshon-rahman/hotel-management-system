@@ -14,32 +14,41 @@
 			function user_add()
 			{
 				var fname = document.getElementById("fname").value;
-				var err_fname = "";
+				var err_fname = document.getElementById("err_fname").innerHTML = "";
 				var lname = document.getElementById("lname").value;
-				var err_lname = "";
-				var gender = document.getElementById("gender").value;
-				var err_gender = "";
+				var err_lname = document.getElementById("err_lname").innerHTML = "";
+				var gender = document.getElementsByName("gender");
+				for(i = 0; i < gender.length; i++) 
+				{ 
+                	if(gender[i].checked)
+                	{
+                		gender = gender[i].value;
+                	} 
+            	} 
+				
+				var err_gender = document.getElementById("err_gender").innerHTML = "";
 				var p_address = document.getElementById("adrs1").value;
-				var err_p_address = "";
+				var err_p_address = document.getElementById("err_p_address").innerHTML = "";
 				var pre_address = document.getElementById("adrs2").value;
-				var err_pre_address = "";
+				var err_pre_address = document.getElementById("err_pre_address").innerHTML = "";
 				var city = document.getElementById("city").value;
-				var err_city = "";
+				var err_city = document.getElementById("err_city").innerHTML = "";
 				var zip = document.getElementById("zip").value;
-				var err_zip = "";
+				var err_zip = document.getElementById("err_zip").innerHTML = "";
 				var country = document.getElementById("country").value;
-				var err_country = "";
+				var err_country = document.getElementById("err_country").innerHTML = "";
 				var phone = document.getElementById("phone").value;
-				var err_phone = "";
+				var err_phone = document.getElementById("err_phone").innerHTML = "";
 				var email = document.getElementById("email").value;
-				var err_email = "";
+				var err_email = document.getElementById("err_email").innerHTML = "";
 				var uname = document.getElementById("uname").value;
-				var err_uname = "";
+				var err_uname = document.getElementById("err_uname").innerHTML = "";
 				var status = document.getElementById("status").value;
 				var pass = document.getElementById("pass").value;
-				var err_pass = "";
+				var err_pass = document.getElementById("err_pass").innerHTML = "";
 				var cpass = document.getElementById("cpass").value;
-				var err_cpass = "";
+				var err_cpass = document.getElementById("err_cpass").innerHTML = "";
+				document.getElementById("msg").innerHTML = "";
 				if(fname == "")
 				{
 					
@@ -116,7 +125,7 @@
 									document.getElementById("msg").innerHTML = "User Registered";
 									fname = document.getElementById("fname").value = "";
 									lname = document.getElementById("lname").value = "";
-									gender = document.getElementById("gender").value = "";
+									
 									p_address = document.getElementById("adrs1").value = "";
 									pre_address = document.getElementById("adrs2").value = "";
 									city = document.getElementById("city").value = "";
@@ -127,37 +136,10 @@
 									uname = document.getElementById("uname").value = "";
 									pass = document.getElementById("pass").value = "";
 									cpass = document.getElementById("cpass").value = "";
-
-									document.getElementById("err_fname").innerHTML = "";
-									document.getElementById("err_lname").innerHTML = "";
-									document.getElementById("err_gender").innerHTML = "";
-									document.getElementById("err_p_address").innerHTML = "";
-									document.getElementById("err_pre_address").innerHTML = "";
-									document.getElementById("err_city").innerHTML = "";
-									document.getElementById("err_zip").innerHTML = "";
-									document.getElementById("err_country").innerHTML = "";
-									document.getElementById("err_phone").innerHTML = "";
-									document.getElementById("err_email").innerHTML = "";
-									document.getElementById("err_uname").innerHTML = "";
-									document.getElementById("err_pass").innerHTML = "";
 								}
 								else
 								{
 									document.getElementById("msg").innerHTML = "Error Occured";
-
-									document.getElementById("err_fname").innerHTML = "";
-									document.getElementById("err_lname").innerHTML = "";
-									document.getElementById("err_gender").innerHTML = "";
-									document.getElementById("err_p_address").innerHTML = "";
-									document.getElementById("err_pre_address").innerHTML = "";
-									document.getElementById("err_city").innerHTML = "";
-									document.getElementById("err_zip").innerHTML = "";
-									document.getElementById("err_country").innerHTML = "";
-									document.getElementById("err_phone").innerHTML = "";
-									document.getElementById("err_email").innerHTML = "";
-									document.getElementById("err_uname").innerHTML = "";
-									document.getElementById("err_status").innerHTML = "";
-									document.getElementById("err_pass").innerHTML = "";
 								}
 							}
 						}
@@ -187,8 +169,8 @@
 			function removeUser()
 			{
 				var uname = document.getElementById("uname").value;
-				var message = "";
-				var err_uname = "";
+				var message = document.getElementById("message").innerHTML = "";
+				var err_uname = document.getElementById("err_uname").innerHTML = "";
 				if(uname == "")
 				{
 					err_uname = "Enter Username";
@@ -277,8 +259,8 @@
 			function addRoom()
 			{
 				var rn = document.getElementById("rn").value;
-				var err_rn = "";
-				var msg = "";
+				var err_rn = document.getElementById("err_rn").innerHTML = "";
+				var msg = document.getElementById("msg").innerHTML = "";
 				var rtype = document.getElementById("rtype").value;
 				if(rn == "")
 				{
@@ -327,6 +309,7 @@
 			function remove()
 			{
 				var error = "";
+				document.getElementById("msg").innerHTML = "";
 				var room_number = document.getElementById("rn").value;
 				if(room_number == "")
 				{
@@ -372,16 +355,16 @@
 			function roomReserve()
 			{
 				var fname = document.getElementById("fname").value;
-				var err_fname = "";
+				var err_fname = document.getElementById("err_fname").innerHTML = "";
 				var lname = document.getElementById("lname").value;
-				var err_lname = "";
+				var err_lname = document.getElementById("err_lname").innerHTML = "";
 				var email = document.getElementById("email").value;
-				var err_email = "";
+				var err_email = document.getElementById("err_email").innerHTML = "";
 				var country = document.getElementById("country").value;
 				var err_country = "";
 				var phone = document.getElementById("phone").value;
-				var err_phone = "";
-				var msg = "";
+				var err_phone = document.getElementById("err_phone").innerHTML = "";
+				var msg = document.getElementById("msg").innerHTML = "";
 				var room_type = document.getElementById("room_type").value;
 				var room_number = document.getElementById("room_number").value;
 				var bedding_type = document.getElementById("bedding_type").value;
@@ -427,13 +410,9 @@
 								document.getElementById("msg").innerHTML = msg;
 								
 								fname = document.getElementById("fname").value = "";
-								document.getElementById("err_fname").innerHTML = "";
 								lname = document.getElementById("lname").value = "";
-								document.getElementById("err_lname").innerHTML = "";
 								email = document.getElementById("email").value = "";
-								document.getElementById("err_email").innerHTML = "";
 								phone = document.getElementById("phone").value = "";
-								document.getElementById("err_phone").innerHTML = "";
 							}
 						}
 					}

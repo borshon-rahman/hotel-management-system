@@ -136,7 +136,8 @@ function add_user()
 								var response = xhtml.responseText;
 								if(response == "done")
 								{
-									document.getElementById("msg").innerHTML = "User Registered";
+									alert("User Registered");
+									//document.getElementById("msg").innerHTML = "User Registered";
 									fname = document.getElementById("fname").value = "";
 									lname = document.getElementById("lname").value = "";
 									
@@ -153,7 +154,8 @@ function add_user()
 								}
 								else
 								{
-									document.getElementById("msg").innerHTML = "Error Occured";
+									alert("Error Occured");
+									//document.getElementById("msg").innerHTML = "Error Occured";
 								}
 							}
 						}
@@ -190,14 +192,16 @@ function removeUser()
 							if(response == "done")
 							{
 								message = "User Removed";
-								document.getElementById("message").innerHTML = message;
+								alert(message);
+								//document.getElementById("message").innerHTML = message;
 								uname = document.getElementById("uname").value = "";
 								document.getElementById("err_uname").innerHTML = "";
 							}
 							else
 							{
 								message = "User not found";
-								document.getElementById("message").innerHTML = message;
+								alert(message);
+								//document.getElementById("message").innerHTML = message;
 							}
 						}
 					}
@@ -288,7 +292,8 @@ function roomReserve()
 							if(response == "done")
 							{
 								msg = "Room has been Reserved!";
-								document.getElementById("msg").innerHTML = msg;
+								alert(msg);
+								//document.getElementById("msg").innerHTML = msg;
 
 								fname = document.getElementById("fname").value = "";
 								lname = document.getElementById("lname").value = "";
@@ -340,12 +345,14 @@ function reserved_room()
 						if(response == "done")
 						{
 							msg = "Reservation Canceled";
-							document.getElementById("msg").innerHTML = msg;
+							alert(msg);
+							//document.getElementById("msg").innerHTML = msg;
 						}
 						else
 						{
 							msg = "Error Occurred";
-							document.getElementById("msg").innerHTML = msg;
+							alert(msg);
+							//document.getElementById("msg").innerHTML = msg;
 						}
 					}
 				}

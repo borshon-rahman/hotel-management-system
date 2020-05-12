@@ -66,7 +66,8 @@
 							if(response == "done")
 							{
 								msg = "Room has been Reserved!";
-								document.getElementById("msg").innerHTML = msg;
+								alert(msg);
+								//document.getElementById("msg").innerHTML = msg;
 
 								fname = document.getElementById("fname").value = "";
 								lname = document.getElementById("lname").value = "";
@@ -118,12 +119,14 @@
 						if(response == "done")
 						{
 							msg = "Reservation Canceled";
-							document.getElementById("msg").innerHTML = msg;
+							alert(msg);
+							//document.getElementById("msg").innerHTML = msg;
 						}
 						else
 						{
 							msg = "Error Occurred";
-							document.getElementById("msg").innerHTML = msg;
+							alert(msg);
+							//document.getElementById("msg").innerHTML = msg;
 						}
 					}
 				}

@@ -135,7 +135,8 @@
 								var response = xhtml.responseText;
 								if(response == "done")
 								{
-									document.getElementById("msg").innerHTML = "User Registered";
+									//document.getElementById("msg").innerHTML = "User Registered";
+									alert("User Registered!");
 									fname = document.getElementById("fname").value = "";
 									lname = document.getElementById("lname").value = "";
 									
@@ -152,7 +153,8 @@
 								}
 								else
 								{
-									document.getElementById("msg").innerHTML = "Error Occured";
+									//document.getElementById("msg").innerHTML = "Error Occured";
+									alert("Error Occured");
 								}
 							}
 						}
@@ -189,14 +191,16 @@
 							if(response == "done")
 							{
 								message = "User Removed";
-								document.getElementById("message").innerHTML = message;
+								alert(message);
+								//document.getElementById("message").innerHTML = message;
 								uname = document.getElementById("uname").value = "";
 								document.getElementById("err_uname").innerHTML = "";
 							}
 							else
 							{
 								message = "User Not Found";
-								document.getElementById("message").innerHTML = message;
+								alert(message);
+								//document.getElementById("message").innerHTML = message;
 							}
 						}
 					}
@@ -280,14 +284,16 @@
 							if(response == "done")
 							{
 								msg = "Room Added";
-								document.getElementById("msg").innerHTML = msg;
+								alert(msg);
+								//document.getElementById("msg").innerHTML = msg;
 								rn = document.getElementById("rn").value = "";
 								document.getElementById("err_rn").innerHTML = "";
 							}
 							else
 							{
 								msg = "Error Occured";
-								document.getElementById("msg").innerHTML = msg;
+								alert(msg);
+								//document.getElementById("msg").innerHTML = msg;
 							}
 						}
 					}
@@ -328,12 +334,14 @@
 							var response = xhtml.responseText;
 							if(response > 0)
 							{
-								document.getElementById("msg").innerHTML = "Room Removed!";
+								//document.getElementById("msg").innerHTML = "Room Removed!";
+								alert("Room Removed!");
 								room_number = document.getElementById("rn").value = "";
 							}
 							else
 							{
-								document.getElementById("msg").innerHTML = "Room not Removed!";
+								alert("Room not Removed!");
+								//document.getElementById("msg").innerHTML = "Room not Removed!";
 							}
 						}
 					}
@@ -409,7 +417,8 @@
 							if(response == "done")
 							{
 								msg = "Room has been Reserved!";
-								document.getElementById("msg").innerHTML = msg;
+								alert(msg);
+								//document.getElementById("msg").innerHTML = msg;
 								
 								fname = document.getElementById("fname").value = "";
 								lname = document.getElementById("lname").value = "";
@@ -461,12 +470,14 @@
 						if(response == "done")
 						{
 							msg = "Reservation Canceled";
-							document.getElementById("msg").innerHTML = msg;
+							alert(msg);
+							//document.getElementById("msg").innerHTML = msg;
 						}
 						else
 						{
 							msg = "Error Occurred";
-							document.getElementById("msg").innerHTML = msg;
+							alert(msg);
+							//document.getElementById("msg").innerHTML = msg;
 						}
 					}
 				}

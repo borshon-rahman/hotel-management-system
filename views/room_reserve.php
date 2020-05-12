@@ -78,9 +78,9 @@
 							<font>Available Room Number </font>
 							<?php
 							require "../models/db_connect.php";
-							$query = "SELECT room_number FROM room WHERE status='available'";
+							$query = "SELECT room_number,type FROM room WHERE status='available'";
 							$results = get($query);
-							$count = mysqli_num_rows($results);
+							
 							?>
 							<select id="room_number" name="room_number">
 							<?php 

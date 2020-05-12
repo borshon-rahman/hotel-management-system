@@ -13,7 +13,7 @@
 				<tr>
 					<th>Room Number</th>
 					<th>Room Type</th>
-					<th colspan="2">Name</th>
+					<th>Name</th>
 					<th>Email</th>
 					<th>Country</th>
 					<th>Phone</th>
@@ -32,8 +32,8 @@
 						echo "<tr>";
 						echo "<td>".$reservation["room_number"]."</td>";
 						echo "<td>".$reservation["room_type"]."</td>";
-						echo "<td>".$reservation["fname"]."</td>";
-						echo "<td>".$reservation["lname"]."</td>";
+						echo "<td>".$reservation["fname"]."  ".$reservation["lname"]."</td>";
+						//echo "<td>".$reservation["lname"]."</td>";
 						echo "<td>".$reservation["email"]."</td>";
 						echo "<td>".$reservation["country"]."</td>";
 						echo "<td>".$reservation["phone"]."</td>";

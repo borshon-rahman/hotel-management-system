@@ -12,4 +12,10 @@
 		$result = get($query);
 		return $result;
 	}
+	function man_users()
+	{
+		$query = "SELECT * FROM users WHERE status='stuff'";
+		$result = get($query);
+		return $result;
+	}
 ?>

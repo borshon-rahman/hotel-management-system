@@ -31,7 +31,7 @@
 					$pass = $_POST['pass'];
 					$pass = md5($pass);
 					$query1 = "INSERT INTO login (user_name, password, status) VALUES ('$uname', '$pass', '$status')";
-					$query2 = "INSERT INTO users (user_name) VALUES ('$uname')";
+					$query2 = "INSERT INTO users (user_name,status) VALUES ('$uname', '$status')";
 					$result= execute($query1);
 					execute($query2);
 					$msg = "Registration Succesfull!";

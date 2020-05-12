@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2020 at 07:32 PM
+-- Generation Time: May 12, 2020 at 09:48 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -42,8 +42,10 @@ INSERT INTO `login` (`user_name`, `password`, `status`) VALUES
 ('admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
 ('borshon', 'fa246d0262c3925617b0c72bb20eeb1d', 'client'),
 ('client', '62608e08adc29a8d6dbc9754e659f125', 'client'),
+('lucky', '562b530cff1f5bca3b1a4c1ad4ad9962', 'client'),
 ('manager', '1d0258c2440a8d19e716292b231e3190', 'manager'),
 ('rafi', 'eb9279982226a42afdf2860dbdc29b45', 'manager'),
+('rafik', '2210a2fca76bc0be329770c5b686d048', 'stuff'),
 ('stuff', 'c13d88cb4cb02003daedb8a84e5d272a', 'stuff');
 
 -- --------------------------------------------------------
@@ -77,6 +79,7 @@ CREATE TABLE `reserved_room` (
 INSERT INTO `reserved_room` (`room_number`, `room_type`, `fname`, `lname`, `email`, `country`, `phone`, `bedding_type`, `meal_plan`, `checkin_date`, `checkin_month`, `checkin_year`, `checkout_date`, `checkout_month`, `checkout_year`) VALUES
 (1, 'Superior Room', 'makhon', 'lal', 'makhon@gmail.com', 'Bangladesh', '090878797', 'Single', 'Room Only', 1, 'Jan', 2015, 1, 'Jan', 2015),
 (2, 'Superior Room', 'jhgjhghjg', 'hvhjvkh', 'bkbk', 'Bangladesh', '541316511', 'Single', 'Room Only', 1, 'Jan', 2015, 1, 'Jan', 2015),
+(3, 'Superior Room', 'gfgfs', 'dafdfsd', 'hrthhh', 'Bangladesh', 'kgh', 'Single', 'Room Only', 1, 'Jan', 2015, 1, 'Jan', 2015),
 (4, 'Superior Room', 'hgjgcghc', 'gvjhvkh', 'vbkvbkbvkj', 'Bangladesh', '28543164616', 'Single', 'Room Only', 1, 'Jan', 2015, 1, 'Jan', 2015),
 (6, 'Superior Room', 'hgfjg', 'bvkbkj', 'hjbkjbjk', 'Thiland', '9879870709', 'Single', 'Room Only', 1, 'Jan', 2015, 1, 'Jan', 2015),
 (7, 'Superior Room', 'zfdsf', '', 'xvxv', 'Bangladesh', 'dfgdf', 'Single', 'Room Only', 1, 'Jan', 2015, 1, 'Jan', 2015);
@@ -100,7 +103,7 @@ CREATE TABLE `room` (
 INSERT INTO `room` (`room_number`, `type`, `status`) VALUES
 (1, 'Deluxe', 'reserved'),
 (2, 'Deluxe', 'reserved'),
-(3, 'Deluxe', 'available'),
+(3, 'Deluxe', 'reserved'),
 (4, 'Deluxe', 'reserved'),
 (5, 'Luxury', 'available'),
 (6, 'Deluxe', 'reserved'),
@@ -122,6 +125,7 @@ INSERT INTO `room` (`room_number`, `type`, `status`) VALUES
 CREATE TABLE `users` (
   `SN` int(8) NOT NULL,
   `user_name` varchar(30) NOT NULL,
+  `status` varchar(20) NOT NULL,
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `gender` varchar(8) NOT NULL,
@@ -138,12 +142,14 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`SN`, `user_name`, `fname`, `lname`, `gender`, `permanent_adrs`, `present_adrs`, `city`, `zip_code`, `country`, `phone`, `email`) VALUES
-(1, 'borshon', 'Borshon', 'Rahman', 'Male', '10/1 J.N Majumdar Lane, Courtpara, Kushtia', '10/1 J.N Majumdar Lane, Courtpara, Kushtia', 'Kushtia', '7000', 'Bangladesh', '01730264304', 'fortuneborshon@gmail.com'),
-(2, 'admin', 'Richard', 'Parker', 'Male', '829 Van Dyke St.\r\nHoward Beach', '829 Van Dyke St.\r\nHoward Beach', 'NewYork', '11414', 'United State', '+80236-564-455', 'parker@gmail.com'),
-(3, 'manager', 'Sufat', 'Ullah', 'Male', '2 Ram Chandra Ray Chowdhury Rd', '2 Ram Chandra Ray Chowdhury Rd', 'Kushtia', '7000', 'Bangladesh', '1012134576789', 'zxcvb@aiub.edu'),
-(4, 'client', 'Mehzabien', 'Chowdhury', 'Female', 'House building, Uttara', 'House building, Uttara', 'Dhaka', '1208', 'Bangladesh', '+8801755555555', 'mehzabien@yahoo.com'),
-(10, 'rafi', 'sfgsvsd', 'vxxcbfdb', 'Male', 'dsfvbx', 'cxbcnftgn', 'vxbcnddf', 'cxvxcbcvnc', 'fvbdfbcv vc', 'dfgrsdvcx', 'dczvxfbd');
+INSERT INTO `users` (`SN`, `user_name`, `status`, `fname`, `lname`, `gender`, `permanent_adrs`, `present_adrs`, `city`, `zip_code`, `country`, `phone`, `email`) VALUES
+(1, 'borshon', 'client', 'Borshon', 'Rahman', 'Male', '10/1 J.N Majumdar Lane, Courtpara, Kushtia', '10/1 J.N Majumdar Lane, Courtpara, Kushtia', 'Kushtia', '7000', 'Bangladesh', '01730264304', 'fortuneborshon@gmail.com'),
+(2, 'admin', 'admin', 'Richard', 'Parker', 'Male', '829 Van Dyke St.\r\nHoward Beach', '829 Van Dyke St.\r\nHoward Beach', 'NewYork', '11414', 'United State', '+80236-564-455', 'parker@gmail.com'),
+(3, 'manager', 'manager', 'Sufat', 'Ullah', 'Male', '2 Ram Chandra Ray Chowdhury Rd', '2 Ram Chandra Ray Chowdhury Rd', 'Kushtia', '7000', 'Bangladesh', '1012134576789', 'zxcvb@aiub.edu'),
+(4, 'client', 'client', 'Mehzabien', 'Chowdhury', 'Female', 'House building, Uttara', 'House building, Uttara', 'Dhaka', '1208', 'Bangladesh', '+8801755555555', 'mehzabien@yahoo.com'),
+(10, 'rafi', 'client', 'sfgsvsd', 'vxxcbfdb', 'Male', 'dsfvbx', 'cxbcnftgn', 'vxbcnddf', 'cxvxcbcvnc', 'fvbdfbcv vc', 'dfgrsdvcx', 'dczvxfbd'),
+(16, 'rafik', 'stuff', 'gfgfs', 'dafdfsd', 'Male', 'jhgjhg', 'lkjhjkhjk', 'hgfhgf', 'bmnv', 'b ,n b', 'kgh', 'hrthhh'),
+(19, 'lucky', 'client', 'Lucky', 'Rahman', 'Male', 'Dhanmondi', 'Uttar Badda', 'Dhaka', '1245', 'Bangladesh', '+88 0123456789', 'xyz@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -182,7 +188,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables

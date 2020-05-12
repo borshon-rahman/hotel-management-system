@@ -48,69 +48,84 @@ function add_user()
 				var err_pass = document.getElementById("err_pass").innerHTML = "";
 				var cpass = document.getElementById("cpass").value;
 				var err_cpass = document.getElementById("err_cpass").innerHTML = "";
+				document.getElementById("msg").innerHTML = "";
+				var flag = false;
 				if(fname == "")
 				{
 					
 					err_fname = "First Name Required";
 					document.getElementById("err_fname").innerHTML = err_fname;
+					flag = true;
 				}
 				if(lname == "")
 				{
 					err_lname = "Last Name Required";
 					document.getElementById("err_lname").innerHTML = err_lname;
+					flag = true;
 				}
 				if(gender == "")
 				{
 					err_gender = "Gender Required";
 					document.getElementById("err_gender").innerHTML = err_gender;
+					flag = true;
 				}
 				if(p_address == "")
 				{
 					err_p_address = "Permanent Address Required";
 					document.getElementById("err_p_address").innerHTML = err_p_address;
+					flag = true;
 				}
 				if(pre_address == "")
 				{
 					err_pre_address = "Present address Require";
 					document.getElementById("err_pre_address").innerHTML = err_pre_address;
+					flag = true;
 				}
 				if(city == "")
 				{
 					err_city = "City Required";
 					document.getElementById("err_city").innerHTML = err_city;
+					flag = true;
 				}
 				if(zip == "")
 				{
 					err_zip = "Zip Required";
 					document.getElementById("err_zip").innerHTML = err_zip;
+					flag = true;
 				}
 				if(country == "")
 				{
 					err_country = "Country Required";
 					document.getElementById("err_country").innerHTML = err_country;
+					flag = true;
 				}
 				if(phone == "")
 				{
 					err_phone = "Phone Required";
 					document.getElementById("err_phone").innerHTML = err_phone;
+					flag = true;
 				}
 				if(email == "")
 				{
 					err_email = "Email Required";
 					document.getElementById("err_email").innerHTML = err_email;
+					flag = true;
 				}
 				if(uname == "")
 				{
 					err_uname = "Username Required";
 					document.getElementById("err_uname").innerHTML = err_uname;
+					flag = true;
 				}
 				if(pass == "")
 				{
 					err_pass = "Password Required";
 					document.getElementById("err_pass").innerHTML = err_pass;
+					flag = true;
 				}
 				else
 				{
+					if(flag == false){
 					if(cpass == pass)
 					{
 						var xhtml = new XMLHttpRequest();
@@ -150,21 +165,10 @@ function add_user()
 						err_cpass = "Password did not matched";
 						document.getElementById("err_cpass").innerHTML = err_cpass;
 					}
+					}
 				}
 			}
-function remove_user()
-{
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function()
-	{
-		if(xhttp.readyState == 4 && xhttp.status == 200)
-		{
-			document.getElementById("content").innerHTML = xhttp.responseText;
-		}
-	}
-	xhttp.open("GET","remove_user.php",true);
-	xhttp.send();
-}
+
 function removeUser()
 			{
 				var uname = document.getElementById("uname").value;
@@ -201,6 +205,21 @@ function removeUser()
 					xhtml.send();
 				}
 			}
+
+			function all_user()
+			{
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function()
+				{
+					if(xhttp.readyState == 4 && xhttp.status == 200)
+					{
+						document.getElementById("content").innerHTML = xhttp.responseText;
+					}
+				}
+				xhttp.open("GET","man_all_user.php",true);
+				xhttp.send();
+			}
+
 function room_reserve()
 {
 	var xhttp = new XMLHttpRequest();

@@ -44,7 +44,7 @@
 			$pass = md5($pass);
 			$query1 = "INSERT INTO login(user_name, password, status) VALUES ('$uname','$pass','$status')";
 			execute($query1);
-			$query2 = "INSERT INTO users(user_name, fname, lname, gender, permanent_adrs, present_adrs, city, zip_code, country, phone, email) VALUES ('$uname','$fname','$lname','$gender','$adrs1','$adrs2','$city','$zip','$country','$phone','$email')";
+			$query2 = "INSERT INTO users(user_name, status, fname, lname, gender, permanent_adrs, present_adrs, city, zip_code, country, phone, email) VALUES ('$uname','$status','$fname','$lname','$gender','$adrs1','$adrs2','$city','$zip','$country','$phone','$email')";
 			execute($query2);
 			echo "done";
 ?>

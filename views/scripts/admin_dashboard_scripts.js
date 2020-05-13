@@ -195,6 +195,7 @@
 								//document.getElementById("message").innerHTML = message;
 								uname = document.getElementById("uname").value = "";
 								document.getElementById("err_uname").innerHTML = "";
+								all_user();
 							}
 							else
 							{
@@ -288,6 +289,7 @@
 								//document.getElementById("msg").innerHTML = msg;
 								rn = document.getElementById("rn").value = "";
 								document.getElementById("err_rn").innerHTML = "";
+								add_room();
 							}
 							else
 							{
@@ -337,6 +339,7 @@
 								//document.getElementById("msg").innerHTML = "Room Removed!";
 								alert("Room Removed!");
 								room_number = document.getElementById("rn").value = "";
+								remove_room();
 							}
 							else
 							{
@@ -441,6 +444,7 @@
 								lname = document.getElementById("lname").value = "";
 								email = document.getElementById("email").value = "";
 								phone = document.getElementById("phone").value = "";
+								room_reserve();
 							}
 						}
 					}
@@ -489,6 +493,7 @@
 						{
 							msg = "Reservation Canceled";
 							alert(msg);
+							reserved_room();
 							//document.getElementById("msg").innerHTML = msg;
 						}
 						else

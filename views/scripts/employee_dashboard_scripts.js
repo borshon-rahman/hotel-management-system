@@ -90,6 +90,7 @@
 								lname = document.getElementById("lname").value = "";
 								email = document.getElementById("email").value = "";
 								phone = document.getElementById("phone").value = "";
+								room_reserve();
 							}
 						}
 					}
@@ -138,6 +139,7 @@
 						{
 							msg = "Reservation Canceled";
 							alert(msg);
+							reserved_room();
 							//document.getElementById("msg").innerHTML = msg;
 						}
 						else

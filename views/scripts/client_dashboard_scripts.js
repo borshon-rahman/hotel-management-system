@@ -91,6 +91,7 @@
 								lname = document.getElementById("lname").value = "";
 								email = document.getElementById("email").value = "";
 								phone = document.getElementById("phone").value = "";
+								room_reserve();
 							}
 							else
 							{

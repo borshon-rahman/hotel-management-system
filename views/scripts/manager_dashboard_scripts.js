@@ -151,6 +151,7 @@ function add_user()
 									uname = document.getElementById("uname").value = "";
 									pass = document.getElementById("pass").value = "";
 									cpass = document.getElementById("cpass").value = "";
+									add_user();
 								}
 								else
 								{
@@ -196,6 +197,7 @@ function removeUser()
 								//document.getElementById("message").innerHTML = message;
 								uname = document.getElementById("uname").value = "";
 								document.getElementById("err_uname").innerHTML = "";
+								all_user();
 							}
 							else
 							{
@@ -316,6 +318,7 @@ function roomReserve()
 								lname = document.getElementById("lname").value = "";
 								email = document.getElementById("email").value = "";
 								phone = document.getElementById("phone").value = "";
+								room_reserve();
 							}
 						}
 					}
@@ -364,6 +367,7 @@ function reserved_room()
 						{
 							msg = "Reservation Canceled";
 							alert(msg);
+							reserved_room();
 							//document.getElementById("msg").innerHTML = msg;
 						}
 						else

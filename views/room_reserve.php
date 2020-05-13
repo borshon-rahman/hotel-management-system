@@ -66,8 +66,8 @@
 						<td>
 							<font>Type of Room </font><font style="color: red">*</font><br>
 							<select id="room_type" name="room_type">
-								<option>Superior Room</option>
 								<option>Delux Room</option>
+								<option>Luxury Room</option>
 								<option>Guest House</option>
 								<option>Single Room</option>
 							</select><br>

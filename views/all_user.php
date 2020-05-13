@@ -32,6 +32,7 @@
 			<table align="center" border="1" style="border-collapse: collapse; text-align: center;">
 				<tr>
 					<th>Username</th>
+					<th>Status</th>
 					<th>Name</th>
 					<th>Gender</th>
 					<th colspan="2">Address</th>
@@ -47,8 +48,8 @@
 					{
 						echo "<tr>";
 						echo "<td>".$user["user_name"]."</td>";
+						echo "<td>".$user["status"]."</td>";
 						echo "<td>".$user["fname"]."  ".$user["lname"]."</td>";
-						//echo "<td>".$user["lname"]."</td>";
 						echo "<td>".$user["gender"]."</td>";
 						echo "<td>".$user["permanent_adrs"]."</td>";
 						echo "<td>".$user["present_adrs"]."</td>";

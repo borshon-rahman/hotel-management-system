@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2020 at 03:11 PM
+-- Generation Time: May 13, 2020 at 07:26 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -40,10 +40,13 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`user_name`, `password`, `status`) VALUES
 ('admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
+('afridi', '33d4ee7cbe9b37a654899887716e93e4', 'stuff'),
 ('borshon', 'fa246d0262c3925617b0c72bb20eeb1d', 'client'),
 ('client', '62608e08adc29a8d6dbc9754e659f125', 'client'),
 ('lucky', '339a65e93299ad8d72c42b263aa23117', 'stuff'),
 ('manager', '1d0258c2440a8d19e716292b231e3190', 'manager'),
+('nawaz', '2bcb86101ac5b414c2866e7fa670f1b6', 'stuff'),
+('readoy', 'af9f854ac266fde850cd6a78f3a7df10', 'client'),
 ('stuff', 'c13d88cb4cb02003daedb8a84e5d272a', 'stuff');
 
 -- --------------------------------------------------------
@@ -71,10 +74,11 @@ CREATE TABLE `reserved_room` (
 --
 
 INSERT INTO `reserved_room` (`room_number`, `room_type`, `fname`, `lname`, `email`, `country`, `phone`, `bedding_type`, `meal_plan`, `checkin`, `checkout`) VALUES
-(1, 'Superior Room', 'dfsdffsd', 'dafdfsd', 'hrthhh', 'Bangladesh', 'kgh', 'Single', 'Room Only', '0000-00-00', '0000-00-00'),
-(2, 'Superior Room', '', '', '', 'Bangladesh', '', 'Single', 'Room Only', '2020-04-28', '2020-05-12'),
-(3, 'Superior Room', 'dfsdffsd', 'aad', 'jhhj', 'Bangladesh', '&lt;b&gt;183&lt;/b&g', 'Single', 'Room Only', '2020-05-13', '2020-05-14'),
-(4, 'Superior Room', 'gfgfs', 'dafdfsd', 'hrthhh', 'Bangladesh', 'kgh', 'Single', 'Room Only', '2020-05-19', '2020-05-20');
+(1, 'Delux Room', 'Borshon', 'Rahman', 'fortuneborshon@gmail.com', 'Bangladesh', ' 8801730264304', 'Double', 'Full Board', '2020-05-17', '2020-05-20'),
+(2, 'Delux Room', 'Mehzabien', 'Chowdhury', 'mezabien@gmail.com', 'Bangladesh', ' 8801122334455', 'Single', 'Breakfast', '2020-05-19', '2020-05-22'),
+(10, 'Luxury Room', 'Max', 'Harry', 'max@gmail.com', 'America', '3232121664979879', 'Single', 'Half Board', '2020-05-16', '2020-05-23'),
+(14, 'Guest House', 'Tahsan', 'Khan', 'tahsan@gmail.com', 'Bangladesh', ' 88222323232', 'Triple', 'Full Board', '2020-05-18', '2020-05-22'),
+(17, 'Single Room', 'Readoy Yasin', 'Arafat', 'readoy@gmail.com', 'Bangladesh', ' 88012333522244', 'Single', 'Room Only', '2020-05-17', '2020-05-19');
 
 -- --------------------------------------------------------
 
@@ -95,18 +99,24 @@ CREATE TABLE `room` (
 INSERT INTO `room` (`room_number`, `type`, `status`) VALUES
 (1, 'Deluxe', 'reserved'),
 (2, 'Deluxe', 'reserved'),
-(3, 'Deluxe', 'reserved'),
-(4, 'Deluxe', 'reserved'),
+(3, 'Deluxe', 'available'),
+(4, 'Deluxe', 'available'),
 (5, 'Luxury', 'available'),
 (6, 'Deluxe', 'available'),
 (7, 'Deluxe', 'available'),
 (8, 'Luxury', 'available'),
 (9, 'Luxury', 'available'),
-(10, 'Luxury', 'available'),
+(10, 'Luxury', 'reserved'),
 (11, 'Guest House', 'available'),
 (12, 'Guest House', 'available'),
 (13, 'Guest House', 'available'),
-(14, 'Guest House', 'available');
+(14, 'Guest House', 'reserved'),
+(15, 'Luxury', 'available'),
+(16, 'Guest House', 'available'),
+(17, 'Single', 'reserved'),
+(18, 'Single', 'available'),
+(19, 'Single', 'available'),
+(20, 'Single', 'available');
 
 -- --------------------------------------------------------
 
@@ -139,7 +149,10 @@ INSERT INTO `users` (`SN`, `user_name`, `status`, `fname`, `lname`, `gender`, `p
 (2, 'admin', 'admin', 'Richard', 'Parker', 'Male', '829 Van Dyke St.\r\nHoward Beach', '829 Van Dyke St.\r\nHoward Beach', 'NewYork', '11414', 'United State', '+80236-564-455', 'parker@gmail.com'),
 (3, 'manager', 'manager', 'Sufat', 'Ullah', 'Male', '2 Ram Chandra Ray Chowdhury Rd', '2 Ram Chandra Ray Chowdhury Rd', 'Kushtia', '7000', 'Bangladesh', '1012134576789', 'zxcvb@aiub.edu'),
 (4, 'client', 'client', 'Mehzabien', 'Chowdhury', 'Female', 'House building, Uttara', 'House building, Uttara', 'Dhaka', '1208', 'Bangladesh', '+8801755555555', 'mehzabien@yahoo.com'),
-(21, 'lucky', 'stuff', 'Lucky', 'Aktar', 'Female', 'Ishwaredi, Pabna, 1200', 'Mirpur 10', 'Dhaka', '7000', 'Bangladesh', ' 88 12212332455', 'lucky@gmail.com');
+(21, 'lucky', 'stuff', 'Lucky', 'Aktar', 'Female', 'Ishwaredi, Pabna, 1200', 'Mirpur 10', 'Dhaka', '7000', 'Bangladesh', ' 88 12212332455', 'lucky@gmail.com'),
+(29, 'nawaz', 'stuff', 'Nawazuddin', 'Siddique', 'Male', 'St. Marry street, Mumbai', 'St. Marry street, Mumbai', 'Mumbai', '6400', 'India', ' 2 321646989563', 'nawaz@hotmail.com'),
+(30, 'readoy', 'client', 'Readoy Yasin', 'Arafat', 'Male', 'Noakhali', 'Noakhali', 'Noakhali', '3200', 'Bangladesh', '+88012333522244', 'readoy@gmail.com'),
+(31, 'afridi', 'stuff', 'Sayed Afridi', 'Rahman', 'Male', 'Gulshan, Dhaka', 'Gulshan, Dhaka', 'Dhaka', '1200', 'Bangladesh', ' 8018999666333', 'afridi@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -178,7 +191,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Constraints for dumped tables

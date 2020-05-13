@@ -19,9 +19,9 @@
 					<th>Phone</th>
 					<th>Bedding Type</th>
 					<th>Meal Plan</th>
-					<th colspan="3">Checkin Date</th>
+					<th>Checkin Date</th>
 					<th></th>
-					<th colspan="3">Checkout Date</th>
+					<th>Checkout Date</th>
 					<th></th>
 					
 				</tr>
@@ -39,13 +39,9 @@
 						echo "<td>".$reservation["phone"]."</td>";
 						echo "<td>".$reservation["bedding_type"]."</td>";
 						echo "<td>".$reservation["meal_plan"]."</td>";
-						echo "<td>".$reservation["checkin_date"]."</td>";
-						echo "<td>".$reservation["checkin_month"]."</td>";
-						echo "<td>".$reservation["checkin_year"]."</td>";
+						echo "<td>".$reservation["checkin"]."</td>";
 						echo "<td></td>";
-						echo "<td>".$reservation["checkout_date"]."</td>";
-						echo "<td>".$reservation["checkout_month"]."</td>";
-						echo "<td>".$reservation["checkout_year"]."</td>";
+						echo "<td>".$reservation["checkout"]."</td>";
 						$rn = $reservation["room_number"];
 						echo '<td>'.'<a href="javascript:;" onclick="cancel('.$rn.')" style="text-decoration: none;"><font style="background-color: blue; color: black; font-weight: bold;">Cancel</font></a>'.'</td>';
 						echo "</tr>";

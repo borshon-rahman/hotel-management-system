@@ -29,35 +29,52 @@
 				var room_number = document.getElementById("room_number").value;
 				var bedding_type = document.getElementById("bedding_type").value;
 				var meal_plan = document.getElementById("meal_plan").value;
-				var checkin_date = document.getElementById("checkin_date").value;
-				var checkin_month = document.getElementById("checkin_month").value;
-				var checkin_year = document.getElementById("checkin_year").value;
-				var checkout_date = document.getElementById("checkout_date").value;
-				var checkout_month = document.getElementById("checkout_month").value;
-				var checkout_year = document.getElementById("checkout_year").value;
+				var checkin = document.getElementById("checkin").value;
+				var err_checkin = document.getElementById("err_checkin").innerHTML = "";
+				var checkout = document.getElementById("checkout").value;
+				var err_checkout = document.getElementById("err_checkout").innerHTML = "";
+				var error = false;
 
 				if(fname == "")
 				{
 					err_fname = "First Name Required";
 					document.getElementById("err_fname").innerHTML = err_fname;
+					error = true;
 				}
 				if(lname == "")
 				{
 					err_lname = "Last Name Required";
 					document.getElementById("err_lname").innerHTML = err_lname;
+					error = true;
 				}
 				if(email == "")
 				{
 					err_email = "Email Required";
 					document.getElementById("err_email").innerHTML = err_email;
+					error = true;
 				}
 				if(phone == "")
 				{
 					err_phone = "Phone Number Required";
 					document.getElementById("err_phone").innerHTML = err_phone;
+					error = true;
+				}
+				var now = new Date();
+				if(checkin < now)
+				{
+					err_checkin = "Invalid Date";
+					document.getElementById("err_checkin").innerHTML = err_checkin;
+					error = true;
+				}
+				if(checkout < now)
+				{
+					err_checkout = "Invalid Date";
+					document.getElementById("err_checkout").innerHTML = err_checkout;
+					error = true;
 				}
 				else
 				{
+					if(error == false){
 					var xhttp = new XMLHttpRequest();
 					xhttp.onreadystatechange = function()
 					{
@@ -67,7 +84,8 @@
 							if(response == "done")
 							{
 								msg = "Room has been Reserved!";
-								document.getElementById("msg").innerHTML = msg;
+								alert(msg);
+								//document.getElementById("msg").innerHTML = msg;
 
 								fname = document.getElementById("fname").value = "";
 								lname = document.getElementById("lname").value = "";
@@ -81,8 +99,9 @@
 							}
 						}
 					}
-					xhttp.open("GET","../controller/room_reserve_controller.php?fname="+fname+"&lname="+lname+"&email="+email+"&country="+country+"&phone="+phone+"&room_type="+room_type+"&room_number="+room_number+"&bedding_type="+bedding_type+"&meal_plan="+meal_plan+"&checkin_date="+checkin_date+"&checkin_month="+checkin_month+"&checkin_year="+checkin_year+"&checkout_date="+checkout_date+"&checkout_month="+checkout_month+"&checkout_year="+checkout_year,true);
+					xhttp.open("GET","../controller/room_reserve_controller.php?fname="+fname+"&lname="+lname+"&email="+email+"&country="+country+"&phone="+phone+"&room_type="+room_type+"&room_number="+room_number+"&bedding_type="+bedding_type+"&meal_plan="+meal_plan+"&checkin="+checkin+"&checkout="+checkout,true);
 					xhttp.send();
+					}
 				}
 
 			}

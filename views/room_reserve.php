@@ -118,63 +118,13 @@
 					<tr>
 						<td>
 							<font>Check in </font><br>
-							<font>Date </font><select id="checkin_date" name="checkin_date">
-								<?php 
-									for($i=1;$i<=31;$i++)
-										{
-											echo "<option>$i</option>";
-										}
-								?>
-								
-							</select> 
-							<font>Month </font><select id="checkin_month" name="checkin_month">
-								<?php $months = array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"); 
-									$months_length = count($months);
-									for($i=0;$i<=$months_length;$i++)
-									{
-										echo "<option>$months[$i]</option>";
-									}
-								?>
-							</select> 
-							<font>Year </font><select id="checkin_year" name="checkin_year">
-								<?php for($i=2015;$i<=2050;$i++)
-								{
-									echo "<option>$i</option>";
-								}
-
-								 ?>
-							</select><br>
+							<input type="date" id="checkin" name="checkin">&nbsp <font id="err_checkin" size="2" style="color: red"></font>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<font>Check out </font><br>
-							<font>Date </font><select id="checkout_date" name="checkout_date">
-								<?php 
-									for($i=1;$i<=31;$i++)
-										{
-											echo "<option>$i</option>";
-										}
-								?>
-								
-							</select> 
-							<font>Month </font><select id="checkout_month" name="checkout_month">
-								<?php $months = array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"); 
-									$months_length = count($months);
-									for($i=0;$i<=$months_length;$i++)
-									{
-										echo "<option>$months[$i]</option>";
-									}
-								?>
-							</select> 
-							<font>Year </font><select id="checkout_year" name="checkout_year">
-								<?php for($i=2015;$i<=2050;$i++)
-								{
-									echo "<option>$i</option>";
-								}
-
-								 ?>
-							</select><br>
+							<input type="Date" id="checkout" name="checkout">&nbsp <font id="err_checkout" size="2" style="color: red"></font>
 						</td>
 					</tr>
 				</table>

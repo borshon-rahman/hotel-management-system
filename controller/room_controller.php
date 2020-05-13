@@ -18,4 +18,11 @@
 		$result = get($query);
 		return $result;
 	}
+	function clients_reserved_room($user)
+	{
+		$uname = $user;
+		$query = "SELECT room_number,room_type,bedding_type,meal_plan,checkin,checkout FROM reserved_room WHERE user_name='$uname'";
+		$result = get($query);
+		return $result;
+	}
 ?>

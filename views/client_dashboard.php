@@ -31,7 +31,7 @@
 		<div>
 			<font size="10" style="text-align: center;">Profile</font>
 			<div style="background-color: rgb(236,190,20); height: 250px; text-align: center;">
-				<a href="client_dashboard.php" style="text-decoration: none; color: black;"><font size="8"><?php foreach($information as $info) {echo $info["user_name"];} ?></font></a>
+				<a href="client_dashboard.php" style="text-decoration: none; color: black;"><font size="8"><?php echo $user; ?></font></a>
 				<table align="center" border="4" style="width: 1400px; height: 150px; border-collapse: collapse;">
 					<tr>
 						<th><font size="5">First Name</font></th>

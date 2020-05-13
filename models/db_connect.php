@@ -14,7 +14,6 @@
 		mysqli_close($connection);
 		return $result;
 	}
-
 	function execute($query)
 	{
 		global $serverName;

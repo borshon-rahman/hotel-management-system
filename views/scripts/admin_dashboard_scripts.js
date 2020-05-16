@@ -382,12 +382,27 @@
 				var room_number = document.getElementById("room_number").value;
 				var bedding_type = document.getElementById("bedding_type").value;
 				var meal_plan = document.getElementById("meal_plan").value;
-				var checkin = document.getElementById("checkin").value;
-				var err_checkin = document.getElementById("err_checkin").innerHTML = "";
-				var checkout = document.getElementById("checkout").value;
-				var err_checkout = document.getElementById("err_checkout").innerHTML = "";
-				var error = false;
 
+				var checkin = document.getElementById("checkin").value;
+				/*var checkinDate = checkin;
+				checkinDate = new Date(checkinDate);
+				var options = { year: 'numeric', month: 'short', day: '2-digit'};
+				var checkinDate = new Intl.DateTimeFormat('en-GB', options).format(checkinDate);
+				checkinDate = checkinDate.replace(/ /g,'-');
+				alert("New:"+checkinDate+" Old:"+checkin);*/
+				var err_checkin = document.getElementById("err_checkin").innerHTML = "";
+				
+				var checkout = document.getElementById("checkout").value;
+				/*var checkoutDate = checkout;
+				checkoutDate = new Date(checkoutDate);
+				var options = { year: 'numeric', month: 'short', day: '2-digit'};
+				var checkoutDate = new Intl.DateTimeFormat('en-GB', options).format(checkoutDate);
+				checkoutDate = checkoutDate.replace(/ /g,'-');
+				alert("New:"+checkoutDate+" Old:"+checkout);*/
+				var err_checkout = document.getElementById("err_checkout").innerHTML = "";
+				
+
+				var error = false;
 				if(fname == "")
 				{
 					err_fname = "First Name Required";
@@ -412,14 +427,18 @@
 					document.getElementById("err_phone").innerHTML = err_phone;
 					error = true;
 				}
-				var now = new Date();
-				if(checkin < now)
+				var d = new Date();
+				var options = { day: '2-digit', month: 'short', year: 'numeric'};
+				var today = new Intl.DateTimeFormat('en-GB', options).format(d);
+				today = today.replace(/ /g,'-');
+				
+				if(checkin < today)
 				{
 					err_checkin = "Invalid Date";
 					document.getElementById("err_checkin").innerHTML = err_checkin;
 					error = true;
 				}
-				if(checkout < now)
+				if(checkout < today)
 				{
 					err_checkout = "Invalid Date";
 					document.getElementById("err_checkout").innerHTML = err_checkout;

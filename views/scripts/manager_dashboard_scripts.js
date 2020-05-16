@@ -286,14 +286,33 @@ function roomReserve()
 					document.getElementById("err_phone").innerHTML = err_phone;
 					error = true;
 				}
-				var now = new Date();
-				if(checkin < now)
+
+				/*var checkinDate = checkin;
+				checkinDate = new Date(checkinDate);
+				var options = { year: 'numeric', month: 'short', day: '2-digit'};
+				var checkinDate = new Intl.DateTimeFormat('en-GB', options).format(checkinDate);
+				checkinDate = checkinDate.replace(/ /g,'-');
+				alert("New:"+checkinDate+" Old:"+checkin);
+
+				var checkoutDate = checkout;
+				checkoutDate = new Date(checkoutDate);
+				var options = { year: 'numeric', month: 'short', day: '2-digit'};
+				var checkoutDate = new Intl.DateTimeFormat('en-GB', options).format(checkoutDate);
+				checkoutDate = checkoutDate.replace(/ /g,'-');
+				alert("New:"+checkoutDate+" Old:"+checkout);*/
+
+				var d = new Date();
+				var options = { day: '2-digit', month: 'short', year: 'numeric'};
+				var today = new Intl.DateTimeFormat('en-GB', options).format(d);
+				today = today.replace(/ /g,'-');
+				alert(today);
+				if(checkin < today)
 				{
 					err_checkin = "Invalid Date";
 					document.getElementById("err_checkin").innerHTML = err_checkin;
 					error = true;
 				}
-				if(checkout < now)
+				if(checkout < today)
 				{
 					err_checkout = "Invalid Date";
 					document.getElementById("err_checkout").innerHTML = err_checkout;

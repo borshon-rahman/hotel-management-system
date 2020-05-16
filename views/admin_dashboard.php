@@ -50,7 +50,7 @@
 				<a href="javascript:;" onclick="room_reserve()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Room Reserve</font></a><br>
 				<a href="javascript:;" onclick="available_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Available Room</font></a><br>
 				<a href="javascript:;" onclick="reserved_room()" style="text-decoration: none;"><font size="4" style="color: rgb(168,58,58);">Reserved Room</font></a><br>
-				<a href="javascript:;" style="text-decoration: none;"><font size="6" style="color: rgb(168,58,58);">Room Reservation Requests</font></a>
+				<!-- <a href="javascript:;" style="text-decoration: none;"><font size="6" style="color: rgb(168,58,58);">Room Reservation Requests</font></a> -->
 			</div>
 			<div id="content">
 				

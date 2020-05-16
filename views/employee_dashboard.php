@@ -46,7 +46,7 @@
 			<a href="javascript:;" onclick="room_reserve()" style="text-decoration: none;"><font size="6" style="color: white">Room Reserve</font></a><br><br>
 			<a href="javascript:;" onclick="available_room()" style="text-decoration: none;"><font size="6" style="color: white;">Available Room</font></a><br><br>
 			<a href="javascript:;" onclick="reserved_room()" style="text-decoration: none;"><font size="6" style="color: white;">Reserved Room</font></a><br><br>
-			<a href="" style="text-decoration: none;"><font size="6" style="color: white;">Reservation Request</font></a>
+			<!-- <a href="" style="text-decoration: none;"><font size="6" style="color: white;">Reservation Request</font></a> -->
 		</div>
 		<div id="content">
 			

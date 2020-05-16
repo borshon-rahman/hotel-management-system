@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2020 at 07:26 PM
+-- Generation Time: May 16, 2020 at 01:02 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -76,6 +76,7 @@ CREATE TABLE `reserved_room` (
 INSERT INTO `reserved_room` (`room_number`, `room_type`, `fname`, `lname`, `email`, `country`, `phone`, `bedding_type`, `meal_plan`, `checkin`, `checkout`) VALUES
 (1, 'Delux Room', 'Borshon', 'Rahman', 'fortuneborshon@gmail.com', 'Bangladesh', ' 8801730264304', 'Double', 'Full Board', '2020-05-17', '2020-05-20'),
 (2, 'Delux Room', 'Mehzabien', 'Chowdhury', 'mezabien@gmail.com', 'Bangladesh', ' 8801122334455', 'Single', 'Breakfast', '2020-05-19', '2020-05-22'),
+(4, 'Delux Room', 'gfgfs', 'dafdfsd', 'hrthhh', 'China', 'kgh', 'Single', 'Room Only', '2020-05-15', '2020-05-18'),
 (10, 'Luxury Room', 'Max', 'Harry', 'max@gmail.com', 'America', '3232121664979879', 'Single', 'Half Board', '2020-05-16', '2020-05-23'),
 (14, 'Guest House', 'Tahsan', 'Khan', 'tahsan@gmail.com', 'Bangladesh', ' 88222323232', 'Triple', 'Full Board', '2020-05-18', '2020-05-22'),
 (17, 'Single Room', 'Readoy Yasin', 'Arafat', 'readoy@gmail.com', 'Bangladesh', ' 88012333522244', 'Single', 'Room Only', '2020-05-17', '2020-05-19');
@@ -99,8 +100,8 @@ CREATE TABLE `room` (
 INSERT INTO `room` (`room_number`, `type`, `status`) VALUES
 (1, 'Deluxe', 'reserved'),
 (2, 'Deluxe', 'reserved'),
-(3, 'Deluxe', 'available'),
-(4, 'Deluxe', 'available'),
+(3, 'Deluxe', 'reserved'),
+(4, 'Deluxe', 'reserved'),
 (5, 'Luxury', 'available'),
 (6, 'Deluxe', 'available'),
 (7, 'Deluxe', 'available'),
@@ -191,7 +192,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `SN` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Constraints for dumped tables
